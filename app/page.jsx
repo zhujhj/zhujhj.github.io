@@ -122,12 +122,14 @@ const Home = () => {
         <meta name="description" content="Welcome to my personal profile!" />
       </Head>
       
-      <header className="text-left mb-8">
-        <h1 className="text-4xl font-bold">Jason Zhu</h1>
-        <p>Computer Science Student at UBC</p>
+      <header className="text-left mb-8 px-[300px]">
+        <div>
+          <h1 className="text-4xl font-bold">Jason Zhu</h1>
+          <p>Computer Science Student at UBC</p>
+        </div>
       </header>
 
-      <main className='pr-[500px]'>
+      <main className='px-[300px]'>
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">About Me</h2>
           <p>

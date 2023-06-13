@@ -1,4 +1,8 @@
+'use client';
+
 import Link from 'next/link';
+import { LinkedinLogo } from "phosphor-react";
+import { GithubLogo } from "phosphor-react";
 
 const Nav = () => {
   return (
@@ -6,7 +10,7 @@ const Nav = () => {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <h1 className="text-white font-bold text-lg">Home</h1>
+            <h1 className="text-white font-bold text-lg">JASON ZHU</h1>
           </Link>
           <ul className="flex space-x-4">
             <li>
@@ -20,8 +24,14 @@ const Nav = () => {
               </Link>
             </li>
             <li>
-              <Link href="/contact">
-                <h1 className="text-gray-300 hover:text-white">Contact</h1>
+              <Link href="https://www.linkedin.com/in/jason-zhu4" target="_blank">
+                {/* <h1 className="text-gray-300 hover:text-white">Contact</h1> */}
+                <LinkedinLogo size={26} className='text-white'/>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://github.com/zhujhj" target="_blank">
+                <GithubLogo size={26} className='text-white'/>
               </Link>
             </li>
           </ul>

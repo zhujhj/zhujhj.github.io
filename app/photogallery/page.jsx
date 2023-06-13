@@ -1,60 +1,127 @@
-import Head from 'next/head';
+'use client';
 
-const Home = () => {
+import Image from 'next/image';
+import { useState } from 'react';
+
+const PhotoGallery = () => {
+  const photos = [
+    {
+      id: 1,
+      src: '/images/overlay.png',
+      alt: 'Photo 1',
+    },
+    {
+      id: 2,
+      src: '/images/rosegarden.png',
+      alt: 'Photo 2',
+    },
+    {
+      id: 3,
+      src: '/images/yourname.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+        id: 4,
+        src: '/images/overlay.png',
+        alt: 'Photo 1',
+      },
+      {
+        id: 5,
+        src: '/images/rosegarden.png',
+        alt: 'Photo 2',
+      },
+      {
+        id: 6,
+        src: '/images/yourname.jpeg',
+        alt: 'Photo 3',
+      },
+      {
+        id: 1,
+        src: '/images/overlay.png',
+        alt: 'Photo 1',
+      },
+      {
+        id: 2,
+        src: '/images/rosegarden.png',
+        alt: 'Photo 2',
+      },
+      {
+        id: 3,
+        src: '/images/yourname.jpeg',
+        alt: 'Photo 3',
+      },
+    // Add more photos as needed
+  ];
+
+//   return (
+//     <div className="container mx-auto py-8">
+//       <h1 className="text-4xl font-bold text-center mb-8">Photo Gallery</h1>
+//       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+//         {photos.map(photo => (
+//           <div key={photo.id}>
+//             <Image
+//               src={photo.src}
+//               alt={photo.alt}
+//               width={500}
+//               height={500}
+//               className="object-cover"
+//             />
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default PhotoGallery;
+const [selectedPhoto, setSelectedPhoto] = useState(null);
+
+  const openModal = (photo) => {
+    setSelectedPhoto(photo);
+  };
+
+  const closeModal = () => {
+    setSelectedPhoto(null);
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Head>
-        <title>My Personal Profile</title>
-        <meta name="description" content="Welcome to my personal profile!" />
-      </Head>
-      
-      <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold">Photo Gallery</h1>
-      </header>
+    <div className="container mx-auto py-8">
+      <h1 className="text-4xl font-bold text-left mb-8">Photo Gallery</h1>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {photos.map(photo => (
+          <div key={photo.id} onClick={() => openModal(photo)}>
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              width={500}
+              height={500}
+              className="object-cover cursor-pointer"
+            />
+          </div>
+        ))}
+      </div>
 
-      <main>
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">About Me</h2>
-          <p>
-            Hi there! My name is Jason Zhu, and this is my personal profile. I'm passionate about [your interests/hobbies], and I love to [what you enjoy doing]. 
-            On this website, you'll find information about my background, skills, projects, and more.
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Skills</h2>
-          <ul className="list-disc ml-8">
-            <li>Skill 1</li>
-            <li>Skill 2</li>
-            <li>Skill 3</li>
-            <li>...</li>
-          </ul>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Projects</h2>
-          <ul className="list-disc ml-8">
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-            <li>...</li>
-          </ul>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
-          <p>
-            If you'd like to get in touch with me, feel free to reach out via email at [your email address] or connect with me on [social media platform]. 
-            I'm always open to new opportunities and collaborations.
-          </p>
-        </section>
-      </main>
-
-      <footer className="text-center mt-8 text-gray-500 text-sm">
-        <p>© {new Date().getFullYear()} [Your Name]. All rights reserved.</p>
-      </footer>
+      {selectedPhoto && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative">
+            <Image
+              src={selectedPhoto.src}
+              alt={selectedPhoto.alt}
+              width={800}
+              height={800}
+              className="object-contain"
+            />
+            <button
+              className="absolute top-4 right-4 text-white font-bold text-lg"
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Home;
+export default PhotoGallery;
