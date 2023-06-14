@@ -174,9 +174,6 @@ const Home = () => {
           <p>
             Email: zhujason4@gmail.com
           </p>
-          <p>
-            Instagram: @jason_z4
-          </p>
         </section>
       </main>
     </div>

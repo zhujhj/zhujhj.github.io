@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { LinkedinLogo } from "phosphor-react";
 import { GithubLogo } from "phosphor-react";
+import { AiFillGithub } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
 
 const Nav = () => {
   return (
@@ -26,12 +28,13 @@ const Nav = () => {
             <li>
               <Link href="https://www.linkedin.com/in/jason-zhu4" target="_blank">
                 {/* <h1 className="text-gray-300 hover:text-white">Contact</h1> */}
-                <LinkedinLogo size={26} className='text-white'/>
+                <AiFillLinkedin size={26} className='text-white'/>
               </Link>
             </li>
             <li>
               <Link href="https://github.com/zhujhj" target="_blank">
-                <GithubLogo size={26} className='text-white'/>
+                {/* <GithubLogo size={26} className='text-white'/> */}
+                <AiFillGithub size={26} className='text-white'/>
               </Link>
             </li>
           </ul>

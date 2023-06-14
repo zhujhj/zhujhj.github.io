@@ -14,8 +14,8 @@ const Projects = () => {
 
       <main>
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Projects</h2>
-          <div className='flex justify-between border-2 border-black p-3 m-3'>
+          <h2 className="text-2xl font-bold mb-4 text-center">Projects</h2>
+          <div className='flex justify-between border-2 border-black rounded-lg p-3 m-3'>
             <div>
                 <h3 className='text-xl font-bold'>Calorie Tracker</h3>
                 <p className='italic'>
@@ -24,13 +24,16 @@ const Projects = () => {
             </div>
             <img src="/images/meandemma.jpeg" className="object-cover w-half h-half justify-right" />
           </div>
-          <div className='flex justify-between border-2 border-black p-3 m-3'>
+          <div className='flex justify-between border-2 border-black rounded-lg p-3 m-3'>
             <div>
                 <h3 className='text-xl font-bold'>Course4You</h3>
                 {/* <p className=''>
                     Hi there! My name is [Your Name], and this is my personal profile. I'm passionate about [your interests/hobbies], and I love to [what you enjoy doing]. 
                     On this website, you'll find information about my background, skills, projects, and more.
                 </p> */}
+                <p className='italic'>
+                    Technologies: Java, Java Swing
+                </p>
                 <li>hello ehaiowdhaowidh</li>
                 <li>hello ehaiowdhaowidh</li>
             </div>
@@ -39,13 +42,19 @@ const Projects = () => {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Skills</h2>
-          <ul className="list-disc ml-8">
+          <h2 className="text-2xl font-bold mb-4 text-center">Skills</h2>
+          {/* <ul className="list-disc ml-8">
             <li>Skill 1</li>
             <li>Skill 2</li>
             <li>Skill 3</li>
             <li>...</li>
-          </ul>
+          </ul> */}
+          <div className='flex justify-center text-center'>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>Java</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>R</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>Jupyter Notebook</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>C++</p>
+          </div>
         </section>
       </main>
 
