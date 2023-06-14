@@ -137,17 +137,17 @@ const Home = () => {
         </div> */}
         <div>
           <motion.h1
-            className="text-4xl font-bold"
+            className="text-6xl font-bold"
             initial="initial"
             animate="animate"
             variants={fadeIn}
           >
             Jason Zhu
           </motion.h1>
-          <p>Computer Science Student at UBC</p>
+          <p className=''>Computer Science Student at UBC</p>
         </div>
         <div className='mt-8 flex justify-center'>
-          <div className="flex justify-right w-[200px] h-[200px] rounded-full overflow-hidden mr-4">
+          <div className="border-2 border-black flex justify-right w-[200px] h-[200px] rounded-full overflow-hidden mr-4">
             <img src="/images/meandemma.jpeg" alt="Profile" className="object-cover w-full h-full justify-right" />
           </div>
         </div>
@@ -158,9 +158,24 @@ const Home = () => {
           <h2 className="text-2xl font-bold mb-4">About Me</h2>
           <p>
             Hi there! My name is Jason Zhu, and I am a 3rd year Computer Science student at the University of British Columbia. 
-            I'm passionate about coding and anything tech related. When I'm not working, I like to play basketball, hockey,
-            take photos, ski, play guitar, and explore the outdoors.
+            I'm passionate about coding and anything tech related. When I'm not working, I like to play sports such as basketball, hockey,
+            and more. I also like to play guitar, ski, and explore the outdoors. I have recently tried to get into photography as well.
             On this website, you'll find information about my background, skills, projects, and more.
+          </p>
+        </section>
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">Bio</h2>
+          <p>
+            I was born on April 4, 2003 in Toronto, Ontario.
+          </p>
+        </section>
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4">Contact</h2>
+          <p>
+            Email: zhujason4@gmail.com
+          </p>
+          <p>
+            Instagram: @jason_z4
           </p>
         </section>
       </main>

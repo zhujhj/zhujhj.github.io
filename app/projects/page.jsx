@@ -15,10 +15,27 @@ const Projects = () => {
       <main>
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Projects</h2>
-          <p>
-            Hi there! My name is [Your Name], and this is my personal profile. I'm passionate about [your interests/hobbies], and I love to [what you enjoy doing]. 
-            On this website, you'll find information about my background, skills, projects, and more.
-          </p>
+          <div className='flex justify-between border-2 border-black p-3 m-3'>
+            <div>
+                <h3 className='text-xl font-bold'>Calorie Tracker</h3>
+                <p className='italic'>
+                    Technologies: Java, Java Swing
+                </p>
+            </div>
+            <img src="/images/meandemma.jpeg" className="object-cover w-half h-half justify-right" />
+          </div>
+          <div className='flex justify-between border-2 border-black p-3 m-3'>
+            <div>
+                <h3 className='text-xl font-bold'>Course4You</h3>
+                {/* <p className=''>
+                    Hi there! My name is [Your Name], and this is my personal profile. I'm passionate about [your interests/hobbies], and I love to [what you enjoy doing]. 
+                    On this website, you'll find information about my background, skills, projects, and more.
+                </p> */}
+                <li>hello ehaiowdhaowidh</li>
+                <li>hello ehaiowdhaowidh</li>
+            </div>
+            <img src="/images/meandemma.jpeg" className="object-cover w-half h-half justify-right" />
+          </div>
         </section>
 
         <section className="mb-8">
@@ -29,24 +46,6 @@ const Projects = () => {
             <li>Skill 3</li>
             <li>...</li>
           </ul>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Projects</h2>
-          <ul className="list-disc ml-8">
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-            <li>...</li>
-          </ul>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
-          <p>
-            If you'd like to get in touch with me, feel free to reach out via email at [your email address] or connect with me on [social media platform]. 
-            I'm always open to new opportunities and collaborations.
-          </p>
         </section>
       </main>
 

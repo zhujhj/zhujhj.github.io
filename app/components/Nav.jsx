@@ -20,7 +20,7 @@ const Nav = () => {
             </li>
             <li>
               <Link href="/projects">
-                <h1 className="text-gray-300 hover:text-white">Projects</h1>
+                <h1 className="text-gray-300 hover:text-white">Projects & Skills</h1>
               </Link>
             </li>
             <li>

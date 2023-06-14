@@ -1,9 +1,12 @@
 import './globals.css'
+// import { Inter } from 'next/font/google'
 import { Inter } from 'next/font/google'
+import { Quicksand } from 'next/font/google'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
+const quicksand = Quicksand({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -16,7 +19,7 @@ export default function RootLayout({ children }) {
     //   <Nav></Nav>
     //   <body className={inter.className}>{children}</body>
     // </html>
-    <html lang="en">
+    <html lang="en" className={quicksand.className}>
       {/* <body className={inter.className}>{children}</body> */}
       <body>
         <div className="main">
