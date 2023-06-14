@@ -25,9 +25,9 @@ const Contact = () => {
          
       </main>
 
-      <footer className="text-center mt-8 text-gray-500 text-sm">
+      {/* <footer className="text-center mt-8 text-gray-500 text-sm">
         <p>© {new Date().getFullYear()} Jason Zhu. All rights reserved.</p>
-      </footer>
+      </footer> */}
     </div>
   );
 };

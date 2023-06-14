@@ -2,19 +2,19 @@ import Head from 'next/head';
 
 const Projects = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 min-h-screen">
       <Head>
         <title>My Personal Profile</title>
         <meta name="description" content="Welcome to my personal profile!" />
       </Head>
       
       <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold">My Projects</h1>
+        <h1 className="text-4xl font-bold">Projects & Skills</h1>
       </header>
 
       <main>
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">About Me</h2>
+          <h2 className="text-2xl font-bold mb-4">Projects</h2>
           <p>
             Hi there! My name is [Your Name], and this is my personal profile. I'm passionate about [your interests/hobbies], and I love to [what you enjoy doing]. 
             On this website, you'll find information about my background, skills, projects, and more.
@@ -50,9 +50,9 @@ const Projects = () => {
         </section>
       </main>
 
-      <footer className="text-center mt-8 text-gray-500 text-sm">
+      {/* <footer className="text-center mt-8 text-gray-500 text-sm">
         <p>© {new Date().getFullYear()} [Your Name]. All rights reserved.</p>
-      </footer>
+      </footer> */}
     </div>
   );
 };

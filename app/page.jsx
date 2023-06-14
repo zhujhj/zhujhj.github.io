@@ -111,21 +111,45 @@
 //     </main>
 //   )
 // }
+'use client';
 
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 const Home = () => {
+
+  const fadeIn = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 min-h-screen">
       <Head>
         <title>My Personal Profile</title>
         <meta name="description" content="Welcome to my personal profile!" />
       </Head>
       
-      <header className="text-left mb-8 px-[300px]">
-        <div>
+      <header className="text-center mb-8 px-[300px]">
+        {/* <div>
           <h1 className="text-4xl font-bold">Jason Zhu</h1>
           <p>Computer Science Student at UBC</p>
+        </div> */}
+        <div>
+          <motion.h1
+            className="text-4xl font-bold"
+            initial="initial"
+            animate="animate"
+            variants={fadeIn}
+          >
+            Jason Zhu
+          </motion.h1>
+          <p>Computer Science Student at UBC</p>
+        </div>
+        <div className='mt-8 flex justify-center'>
+          <div className="flex justify-right w-[200px] h-[200px] rounded-full overflow-hidden mr-4">
+            <img src="/images/meandemma.jpeg" alt="Profile" className="object-cover w-full h-full justify-right" />
+          </div>
         </div>
       </header>
 
@@ -134,43 +158,12 @@ const Home = () => {
           <h2 className="text-2xl font-bold mb-4">About Me</h2>
           <p>
             Hi there! My name is Jason Zhu, and I am a 3rd year Computer Science student at the University of British Columbia. 
-            I'm passionate about [your interests/hobbies], and I love to [what you enjoy doing]. 
+            I'm passionate about coding and anything tech related. When I'm not working, I like to play basketball, hockey,
+            take photos, ski, play guitar, and explore the outdoors.
             On this website, you'll find information about my background, skills, projects, and more.
           </p>
         </section>
-
-        {/* <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Skills</h2>
-          <ul className="list-disc ml-8">
-            <li>Skill 1</li>
-            <li>Skill 2</li>
-            <li>Skill 3</li>
-            <li>...</li>
-          </ul>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Projects</h2>
-          <ul className="list-disc ml-8">
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-            <li>...</li>
-          </ul>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
-          <p>
-            If you'd like to get in touch with me, feel free to reach out via email at [your email address] or connect with me on [social media platform]. 
-            I'm always open to new opportunities and collaborations.
-          </p>
-        </section> */}
       </main>
-
-      <footer className="text-center mt-8 text-gray-500 text-sm">
-        <p>© {new Date().getFullYear()} Jason Zhu. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

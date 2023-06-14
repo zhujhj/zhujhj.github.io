@@ -7,47 +7,47 @@ const PhotoGallery = () => {
   const photos = [
     {
       id: 1,
-      src: '/images/overlay.png',
+      src: '/images/kyotarob.jpeg',
       alt: 'Photo 1',
     },
     {
       id: 2,
-      src: '/images/rosegarden.png',
+      src: '/images/meandemma.jpeg',
       alt: 'Photo 2',
     },
     {
       id: 3,
-      src: '/images/yourname.jpeg',
+      src: '/images/nitobe.jpeg',
       alt: 'Photo 3',
     },
     {
         id: 4,
-        src: '/images/overlay.png',
+        src: '/images/stephenbryant.jpeg',
         alt: 'Photo 1',
       },
       {
         id: 5,
-        src: '/images/rosegarden.png',
+        src: '/images/stephensunset.jpeg',
         alt: 'Photo 2',
       },
       {
         id: 6,
-        src: '/images/yourname.jpeg',
+        src: '/images/stephenwhistler.jpeg',
         alt: 'Photo 3',
       },
       {
-        id: 1,
-        src: '/images/overlay.png',
+        id: 7,
+        src: '/images/stephenwhistler2.jpeg',
         alt: 'Photo 1',
       },
       {
-        id: 2,
-        src: '/images/rosegarden.png',
+        id: 8,
+        src: '/images/whistlergroup1.jpeg',
         alt: 'Photo 2',
       },
       {
-        id: 3,
-        src: '/images/yourname.jpeg',
+        id: 9,
+        src: '/images/whistlergroup2.jpeg',
         alt: 'Photo 3',
       },
     // Add more photos as needed
@@ -86,7 +86,12 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-4xl font-bold text-left mb-8">Photo Gallery</h1>
+      <h1 className="text-4xl font-bold text-left mb-4">Photo Gallery</h1>
+      <p className='text-gray-600 mb-4 mr-[500px]'>
+        One of my personal hobbies is photography. I didn't want to spend
+      too much money on a very expensive camera, so I salvaged my dad's old film camera, a Ricoh KR-5 Super II.
+      Right now, I am playing around with it, and here are some of my favourite photos I have taken.
+      </p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {photos.map(photo => (
           <div key={photo.id} onClick={() => openModal(photo)}>
