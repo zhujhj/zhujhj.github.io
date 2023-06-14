@@ -115,6 +115,10 @@
 
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { Cake } from "phosphor-react";
+import { MapPin } from "phosphor-react";
+import { Envelope } from "phosphor-react";
+import { Student } from "phosphor-react";
 
 const Home = () => {
 
@@ -130,20 +134,20 @@ const Home = () => {
         <meta name="description" content="Welcome to my personal profile!" />
       </Head>
       
-      <header className="text-center mb-8 px-[300px]">
+      <motion.header 
+        className="text-center mb-8 px-[300px]"
+        initial="initial"
+        animate="animate"
+        variants={fadeIn}
+        transition={{ duration: 1.5 }}>
         {/* <div>
           <h1 className="text-4xl font-bold">Jason Zhu</h1>
           <p>Computer Science Student at UBC</p>
         </div> */}
         <div>
-          <motion.h1
-            className="text-6xl font-bold"
-            initial="initial"
-            animate="animate"
-            variants={fadeIn}
-          >
+          <h1 className="text-6xl font-bold">
             Jason Zhu
-          </motion.h1>
+          </h1>
           <p className=''>Computer Science Student at UBC</p>
         </div>
         <div className='mt-8 flex justify-center'>
@@ -151,9 +155,14 @@ const Home = () => {
             <img src="/images/meandemma.jpeg" alt="Profile" className="object-cover w-full h-full justify-right" />
           </div>
         </div>
-      </header>
+      </motion.header>
 
-      <main className='px-[300px]'>
+      <motion.main 
+        className='px-[300px]'
+        initial="initial"
+        animate="animate"
+        variants={fadeIn}
+        transition={{ duration: 2 }}>
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">About Me</h2>
           <p>
@@ -165,17 +174,23 @@ const Home = () => {
         </section>
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Bio</h2>
-          <p>
-            I was born on April 4, 2003 in Toronto, Ontario.
+          <p className='flex justify-start'>
+          <Cake size={32} weight="fill" className='pr-2 -mt-1'/> I was born on April 4, 2003.
+          </p>
+          <p className='flex justify-start'>
+          <MapPin size={32} weight="fill" className='pr-2 -mt-1'/> I am from Scarborough, Toronto, Ontario.
+          </p> 
+          <p className='flex justify-start'>
+          <Student size={32} weight="fill" className='pr-2 -mt-1'/> University of British Columbia
           </p>
         </section>
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Contact</h2>
-          <p>
-            Email: zhujason4@gmail.com
+          <p className='flex justify-start'>
+            <Envelope size={32} className='pr-2 -mt-1'/> zhujason4@gmail.com
           </p>
         </section>
-      </main>
+      </motion.main>
     </div>
   );
 };

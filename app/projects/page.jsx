@@ -54,6 +54,11 @@ const Projects = () => {
             <p className='border-2 border-black rounded-lg p-2 mx-2'>R</p>
             <p className='border-2 border-black rounded-lg p-2 mx-2'>Jupyter Notebook</p>
             <p className='border-2 border-black rounded-lg p-2 mx-2'>C++</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>Python</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>HTML</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>CSS</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>JavaScript</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2'>React.js</p>
           </div>
         </section>
       </main>

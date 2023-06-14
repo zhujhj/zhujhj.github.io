@@ -100,7 +100,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
               alt={photo.alt}
               width={500}
               height={500}
-              className="object-cover cursor-pointer"
+              className="object-cover cursor-pointer shadow-lg border-2 border-black rounded-lg"
             />
           </div>
         ))}
