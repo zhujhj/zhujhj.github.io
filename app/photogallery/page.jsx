@@ -2,8 +2,14 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const PhotoGallery = () => {
+  const fadeIn = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+  };
+
   const photos = [
     {
       id: 1,
@@ -85,11 +91,18 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
   };
 
   return (
-    <div className="container mx-auto py-8">
+    <motion.div
+     className="container mx-auto py-8"
+        initial="initial"
+        animate="animate"
+        variants={fadeIn}
+        transition={{ duration: 2 }}
+        >
       <h1 className="text-4xl font-bold text-left mb-4">Photo Gallery</h1>
       <p className='text-gray-600 mb-4 mr-[500px]'>
         One of my personal hobbies is photography. I didn't want to spend
-      too much money on a very expensive camera, so I salvaged my dad's old film camera, a Ricoh KR-5 Super II.
+      too much money on a very expensive camera, so I salvaged my dad's old film camera, a 
+      <span className='font-bold'>Ricoh KR-5 Super II</span>.
       Right now, I am playing around with it, and here are some of my favourite photos I have taken.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -107,14 +120,14 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
       </div>
 
       {selectedPhoto && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
           <div className="relative">
             <Image
               src={selectedPhoto.src}
               alt={selectedPhoto.alt}
               width={800}
               height={800}
-              className="object-contain"
+              className="object-contain border-2 border-black rounded-lg"
             />
             <button
               className="absolute top-4 right-4 text-white font-bold text-lg"
@@ -125,7 +138,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

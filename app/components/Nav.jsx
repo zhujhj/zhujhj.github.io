@@ -8,7 +8,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 
 const Nav = () => {
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-gray-800 opacity-50">
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link href="/">

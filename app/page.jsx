@@ -145,15 +145,17 @@ const Home = () => {
           <p>Computer Science Student at UBC</p>
         </div> */}
         <div>
+        <div className="justify-center">
           <h1 className="text-6xl font-bold">
             Jason Zhu
           </h1>
           <p className=''>Computer Science Student at UBC</p>
         </div>
         <div className='mt-8 flex justify-center'>
-          <div className="border-2 border-black flex justify-right w-[200px] h-[200px] rounded-full overflow-hidden mr-4">
-            <img src="/images/meandemma.jpeg" alt="Profile" className="object-cover w-full h-full justify-right" />
+          <div className="border-2 border-black w-[200px] h-[200px] rounded-full overflow-hidden">
+            <img src="/images/meandemma.jpeg" alt="Profile" className="object-cover w-full h-full" />
           </div>
+        </div>
         </div>
       </motion.header>
 
@@ -166,7 +168,7 @@ const Home = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">About Me</h2>
           <p>
-            Hi there! My name is Jason Zhu, and I am a 3rd year Computer Science student at the University of British Columbia. 
+            Hi there! My name is Jason Zhu, and I am a 3rd year BSc Computer Science student at the University of British Columbia. 
             I'm passionate about coding and anything tech related. When I'm not working, I like to play sports such as basketball, hockey,
             and more. I also like to play guitar, ski, and explore the outdoors. I have recently tried to get into photography as well.
             On this website, you'll find information about my background, skills, projects, and more.
