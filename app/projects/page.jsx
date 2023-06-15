@@ -87,6 +87,39 @@ const Projects = () => {
             <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>IntelliJ</p>
           </div>
         </section>
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-center">Relevant Courses</h2>
+          {/* <ul className="list-disc ml-8">
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <li>Skill 3</li>
+            <li>...</li>
+          </ul> */}
+          <div className='flex justify-center text-center'>
+            <table className='border-2 border-black rounded-lg p-2 mx-2'>
+              <tr className='border-2 border-black bg-purple-300'>
+                <th className='w-[100px]'>Class Code</th>
+                <th className='w-[400px]'>Class Title</th>
+              </tr>
+              <tr> 
+                <td>CPSC 110</td>
+                <td>Computation, Programs, and Programming</td>
+              </tr>
+              <tr>
+                <td>CPSC 121</td>
+                <td>Models of Computation</td>
+              </tr>
+              <tr>
+                <td>CPSC 210</td>
+                <td>Software Construction</td>
+              </tr>
+              <tr>
+                <td>CPSC 221</td>
+                <td>Basic Data Structures and Algorithms</td>
+              </tr>
+            </table>
+          </div>
+        </section>
       </main>
 
       {/* <footer className="text-center mt-8 text-gray-500 text-sm">
