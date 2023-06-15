@@ -149,11 +149,11 @@ const Home = () => {
           <h1 className="text-6xl font-bold">
             Jason Zhu
           </h1>
-          <p className=''>Computer Science Student at UBC</p>
+          <p className=''>Undergraduate Computer Science Student at UBC</p>
         </div>
         <div className='mt-8 flex justify-center'>
           <div className="border-2 border-black w-[200px] h-[200px] rounded-full overflow-hidden">
-            <img src="/images/meandemma.jpeg" alt="Profile" className="object-cover w-full h-full" />
+            <img src="/images/5615371C-F970-4D3D-8D60-D6FCA9E18C80_1_105_c.jpeg" alt="Profile" className="object-cover w-full h-full" />
           </div>
         </div>
         </div>

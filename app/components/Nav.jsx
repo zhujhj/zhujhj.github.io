@@ -5,6 +5,7 @@ import { LinkedinLogo } from "phosphor-react";
 import { GithubLogo } from "phosphor-react";
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
+import { motion } from 'framer-motion';
 
 const Nav = () => {
   return (
@@ -12,7 +13,10 @@ const Nav = () => {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <h1 className="text-white font-bold text-lg">JASON ZHU</h1>
+            <motion.h1 
+            className="text-white font-bold text-lg"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}>JASON ZHU</motion.h1>
           </Link>
           <ul className="flex space-x-4">
             <li>
@@ -25,18 +29,22 @@ const Nav = () => {
                 <h1 className="text-gray-300 hover:text-white">Projects & Skills</h1>
               </Link>
             </li>
-            <li>
+            <motion.li
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}>
               <Link href="https://www.linkedin.com/in/jason-zhu4" target="_blank">
                 {/* <h1 className="text-gray-300 hover:text-white">Contact</h1> */}
                 <AiFillLinkedin size={26} className='text-white'/>
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}>
               <Link href="https://github.com/zhujhj" target="_blank">
                 {/* <GithubLogo size={26} className='text-white'/> */}
                 <AiFillGithub size={26} className='text-white'/>
               </Link>
-            </li>
+            </motion.li>
           </ul>
         </div>
       </div>

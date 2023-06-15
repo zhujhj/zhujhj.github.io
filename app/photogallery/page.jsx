@@ -13,47 +13,52 @@ const PhotoGallery = () => {
   const photos = [
     {
       id: 1,
-      src: '/images/kyotarob.jpeg',
+      src: '/images/bryantstephen.jpeg',
       alt: 'Photo 1',
     },
     {
       id: 2,
-      src: '/images/meandemma.jpeg',
+      src: '/images/chineserestaurant.jpeg',
       alt: 'Photo 2',
     },
     {
       id: 3,
-      src: '/images/nitobe.jpeg',
+      src: '/images/group1.jpeg',
       alt: 'Photo 3',
     },
     {
         id: 4,
-        src: '/images/stephenbryant.jpeg',
+        src: '/images/group2.jpeg',
         alt: 'Photo 1',
       },
       {
         id: 5,
-        src: '/images/stephensunset.jpeg',
+        src: '/images/jackphilipstephen.jpeg',
         alt: 'Photo 2',
       },
       {
         id: 6,
-        src: '/images/stephenwhistler.jpeg',
+        src: '/images/lights.jpeg',
         alt: 'Photo 3',
       },
       {
         id: 7,
-        src: '/images/stephenwhistler2.jpeg',
+        src: '/images/skyline1.jpeg',
         alt: 'Photo 1',
       },
       {
         id: 8,
-        src: '/images/whistlergroup1.jpeg',
+        src: '/images/stephen.jpeg',
         alt: 'Photo 2',
       },
       {
         id: 9,
-        src: '/images/whistlergroup2.jpeg',
+        src: '/images/CE74FC1D-0CC2-4992-9C9E-5ACB4DBAA837_1_105_c.jpeg',
+        alt: 'Photo 3',
+      },
+      {
+        id: 9,
+        src: '/images/5615371C-F970-4D3D-8D60-D6FCA9E18C80_1_105_c.jpeg',
         alt: 'Photo 3',
       },
     // Add more photos as needed
@@ -107,21 +112,37 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {photos.map(photo => (
-          <div key={photo.id} onClick={() => openModal(photo)}>
+          <motion.div key={photo.id} onClick={() => openModal(photo)}
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}>
             <Image
               src={photo.src}
               alt={photo.alt}
               width={500}
               height={500}
               className="object-cover cursor-pointer shadow-lg border-2 border-black rounded-lg"
+              // whileHover={{ scale: 1.1 }}
+              // transition={{ type: "spring", stiffness: 400, damping: 10 }}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {selectedPhoto && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="relative">
+          <motion.div className="relative"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.3,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+              type: "spring",
+              damping: 15,
+              stiffness: 100,
+              restDelta: 0.001
+            }
+          }}>
             <Image
               src={selectedPhoto.src}
               alt={selectedPhoto.alt}
@@ -129,13 +150,15 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
               height={800}
               className="object-contain border-2 border-black rounded-lg"
             />
-            <button
+            <motion.button
               className="absolute top-4 right-4 text-white font-bold text-lg"
               onClick={closeModal}
+              whileHover={{ scale: 1.07 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               Close
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       )}
     </motion.div>

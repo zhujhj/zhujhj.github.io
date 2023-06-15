@@ -41,7 +41,7 @@ const Projects = () => {
                 <li>Developed 30+ unit tests to fix bugs and validate the functionality of the program</li>
                 <li>Worked with a client to perform a user acceptance test (UAT) to make sure the program meets the client's needs</li>
             </div>
-            <img src="/images/meandemma.jpeg" className="object-cover w-half h-half justify-right" />
+            <img src="/images/chineserestaurant.jpeg" className="object-cover w-[300px] justify-right" />
           </div>
           <div className='flex justify-between border-2 border-black rounded-lg p-3 m-3'>
             <div>
@@ -59,7 +59,7 @@ const Projects = () => {
                 <li>Presented a business pitch of the product to judges analysing the feasibility, monetization, tech stack, and more</li>
 
             </div>
-            <img src="/images/meandemma.jpeg" className="object-cover w-half h-half justify-right" />
+            <img src="/images/lights.jpeg" className="object-cover w-[300px] justify-right" />
           </div>
         </section>
 
