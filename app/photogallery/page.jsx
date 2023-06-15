@@ -101,7 +101,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
       <h1 className="text-4xl font-bold text-left mb-4">Photo Gallery</h1>
       <p className='text-gray-600 mb-4 mr-[500px]'>
         One of my personal hobbies is photography. I didn't want to spend
-      too much money on a very expensive camera, so I salvaged my dad's old film camera, a 
+      too much money on a very expensive camera, so I salvaged my dad's old film camera, a &#160;
       <span className='font-bold'>Ricoh KR-5 Super II</span>.
       Right now, I am playing around with it, and here are some of my favourite photos I have taken.
       </p>
