@@ -41,7 +41,7 @@ const Projects = () => {
                 <li>Developed 30+ unit tests to fix bugs and validate the functionality of the program</li>
                 <li>Worked with a client to perform a user acceptance test (UAT) to make sure the program meets the client's needs</li>
             </div>
-            <img src="/images/chineserestaurant.jpeg" className="object-cover w-[300px] justify-right" />
+            <img src="/images/calorietracker.png" className="object-cover w-[300px] justify-right border-2 border-black rounded-lg" />
           </div>
           <div className='flex justify-between border-2 border-black rounded-lg p-3 m-3'>
             <div>
@@ -59,7 +59,7 @@ const Projects = () => {
                 <li>Presented a business pitch of the product to judges analysing the feasibility, monetization, tech stack, and more</li>
 
             </div>
-            <img src="/images/lights.jpeg" className="object-cover w-[300px] justify-right" />
+            <img src="/images/course4you.png" className="object-cover w-[300px] justify-right border-2 border-black rounded-lg" />
           </div>
         </section>
 
@@ -117,6 +117,34 @@ const Projects = () => {
                 <td>CPSC 221</td>
                 <td>Basic Data Structures and Algorithms</td>
               </tr>
+              {/* <tr>
+                <td>DSCI 100</td>
+                <td>Introduction to Data Science</td>
+              </tr> */}
+              {/* <tr>
+                <td>STAT 201</td>
+                <td>Statistical Inference for Data Science</td>
+              </tr>
+              <tr>
+                <td>STAT 302</td>
+                <td>Introduction to Probability</td>
+              </tr> */}
+              {/* <tr>
+                <td>MATH 100</td>
+                <td>Calculus I</td>
+              </tr> */}
+              {/* <tr>
+                <td>MATH 101</td>
+                <td>Calculus II</td>
+              </tr>
+              <tr>
+                <td>MATH 200</td>
+                <td>Calculus III</td>
+              </tr>
+              <tr>
+                <td>MATH 221</td>
+                <td>Matrix Algebra</td>
+              </tr> */}
             </table>
           </div>
         </section>
