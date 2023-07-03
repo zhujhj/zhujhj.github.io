@@ -10,6 +10,14 @@ const Projects = () => {
         animate: { opacity: 1 },
     };
 
+    // const openModal = (photo) => {
+    //   setSelectedPhoto(photo);
+    // };
+  
+    // const closeModal = () => {
+    //   setSelectedPhoto(null);
+    // };
+
   return (
     <motion.div 
     className="container mx-auto px-4 py-8 min-h-screen"
@@ -41,11 +49,14 @@ const Projects = () => {
                 <li>Developed 30+ unit tests to fix bugs and validate the functionality of the program</li>
                 <li>Worked with a client to perform a user acceptance test (UAT) to make sure the program meets the client's needs</li>
             </div>
-            <img src="/images/calorietracker.png" className="object-cover w-[300px] justify-right border-2 border-black rounded-lg" />
+            <img src="/images/calorietracker.png" 
+            className="object-cover w-[300px] justify-right border-2 border-black rounded-lg" 
+            // onClick={() => openModal("/images/calorietracker.png")}
+            />
           </div>
           <div className='flex justify-between border-2 border-black rounded-lg p-3 m-3'>
             <div>
-                <h3 className='text-xl font-bold'>Course4You</h3>
+                <a className='text-xl font-bold' href="https://github.com/leowang801/produhacks-team1-2023" target="_blank">Course4You</a>
                 {/* <p className=''>
                     Hi there! My name is [Your Name], and this is my personal profile. I'm passionate about [your interests/hobbies], and I love to [what you enjoy doing]. 
                     On this website, you'll find information about my background, skills, projects, and more.
@@ -59,7 +70,10 @@ const Projects = () => {
                 <li>Presented a business pitch of the product to judges analysing the feasibility, monetization, tech stack, and more</li>
 
             </div>
-            <img src="/images/course4you.png" className="object-cover w-[300px] justify-right border-2 border-black rounded-lg" />
+            <img src="/images/course4you.png" 
+            className="object-cover w-[300px] justify-right border-2 border-black rounded-lg" 
+            // onClick={() => openModal("/images/course4you.png")}
+            />
           </div>
         </section>
 
