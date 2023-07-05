@@ -131,23 +131,23 @@ const Projects = () => {
                 <td>CPSC 221</td>
                 <td>Basic Data Structures and Algorithms</td>
               </tr>
-              {/* <tr>
+              <tr>
                 <td>DSCI 100</td>
                 <td>Introduction to Data Science</td>
-              </tr> */}
-              {/* <tr>
+              </tr>
+              <tr>
                 <td>STAT 201</td>
                 <td>Statistical Inference for Data Science</td>
               </tr>
               <tr>
                 <td>STAT 302</td>
                 <td>Introduction to Probability</td>
-              </tr> */}
-              {/* <tr>
+              </tr>
+              <tr>
                 <td>MATH 100</td>
                 <td>Calculus I</td>
-              </tr> */}
-              {/* <tr>
+              </tr>
+              <tr>
                 <td>MATH 101</td>
                 <td>Calculus II</td>
               </tr>
@@ -158,7 +158,7 @@ const Projects = () => {
               <tr>
                 <td>MATH 221</td>
                 <td>Matrix Algebra</td>
-              </tr> */}
+              </tr>
             </table>
           </div>
         </section>
