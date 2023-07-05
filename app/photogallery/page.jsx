@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const PhotoGallery = () => {
   const fadeIn = {
@@ -87,13 +88,38 @@ const PhotoGallery = () => {
 // export default PhotoGallery;
 const [selectedPhoto, setSelectedPhoto] = useState(null);
 
+  // const openModal = (photo) => {
+  //   setSelectedPhoto(photo);
+  // };
+
+  // const closeModal = () => {
+  //   setSelectedPhoto(null);
+  // };
+
   const openModal = (photo) => {
     setSelectedPhoto(photo);
+    setImageExpanded(true);
   };
-
+  
   const closeModal = () => {
     setSelectedPhoto(null);
+    setImageExpanded(false);
   };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  };
+  
+  const [isImageExpanded, setImageExpanded] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <motion.div
@@ -129,7 +155,8 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
       </div>
 
       {selectedPhoto && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60"
+        onClick={closeModal}>
           <motion.div className="relative"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}

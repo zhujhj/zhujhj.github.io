@@ -38,7 +38,7 @@ const Projects = () => {
       <main>
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-center">Projects</h2>
-          <div className='flex justify-between border-2 border-black rounded-lg p-3 m-3'>
+          <div className='flex items-center justify-between border-2 border-black rounded-lg p-3 m-3'>
             <div>
                 <h3 className='text-xl font-bold'>Calorie Tracker</h3>
                 <p className='italic'>
@@ -54,7 +54,7 @@ const Projects = () => {
             // onClick={() => openModal("/images/calorietracker.png")}
             />
           </div>
-          <div className='flex justify-between border-2 border-black rounded-lg p-3 m-3'>
+          <div className='flex items-center justify-between border-2 border-black rounded-lg p-3 m-3'>
             <div>
                 <a className='text-xl font-bold' href="https://github.com/leowang801/produhacks-team1-2023" target="_blank">Course4You</a>
                 {/* <p className=''>
