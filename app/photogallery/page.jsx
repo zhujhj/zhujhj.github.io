@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { XCircle } from "phosphor-react";
 
 const PhotoGallery = () => {
   const fadeIn = {
@@ -28,42 +29,80 @@ const PhotoGallery = () => {
       alt: 'Photo 3',
     },
     {
-        id: 4,
-        src: '/images/group2.jpeg',
-        alt: 'Photo 1',
-      },
-      {
-        id: 5,
-        src: '/images/jackphilipstephen.jpeg',
-        alt: 'Photo 2',
-      },
-      {
-        id: 6,
-        src: '/images/lights.jpeg',
-        alt: 'Photo 3',
-      },
-      {
-        id: 7,
-        src: '/images/skyline1.jpeg',
-        alt: 'Photo 1',
-      },
-      {
-        id: 8,
-        src: '/images/stephen.jpeg',
-        alt: 'Photo 2',
-      },
-      {
-        id: 9,
-        src: '/images/CE74FC1D-0CC2-4992-9C9E-5ACB4DBAA837_1_105_c.jpeg',
-        alt: 'Photo 3',
-      },
-      {
-        id: 9,
-        src: '/images/5615371C-F970-4D3D-8D60-D6FCA9E18C80_1_105_c.jpeg',
-        alt: 'Photo 3',
-      },
+      id: 4,
+      src: '/images/group2.jpeg',
+      alt: 'Photo 1',
+    },
+    {
+      id: 5,
+      src: '/images/jackphilipstephen.jpeg',
+      alt: 'Photo 2',
+    },
+    {
+      id: 6,
+      src: '/images/lights.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 7,
+      src: '/images/skyline1.jpeg',
+      alt: 'Photo 1',
+    },
+    {
+      id: 8,
+      src: '/images/stephen.jpeg',
+      alt: 'Photo 2',
+    },
+    {
+      id: 9,
+      src: '/images/CE74FC1D-0CC2-4992-9C9E-5ACB4DBAA837_1_105_c.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 10,
+      src: '/images/5615371C-F970-4D3D-8D60-D6FCA9E18C80_1_105_c.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 11,
+      src: '/images/kitssunset.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 12,
+      src: '/images/mistymountain.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 12,
+      src: '/images/pianosfu.jpeg',
+      alt: 'Photo 3',
+    },
     // Add more photos as needed
   ];
+
+  const photosVert = [
+    {
+      id: 100,
+      src: '/images/verticalsunset.jpeg',
+      alt: 'Photo 1',
+    },
+    {
+      id: 100,
+      src: '/images/stanleyparkbike.jpeg',
+      alt: 'Photo 1',
+    },
+    {
+      id: 100,
+      src: '/images/mountainwindow.jpeg',
+      alt: 'Photo 1',
+    },
+    {
+      id: 100,
+      src: '/images/gastown.jpeg',
+      alt: 'Photo 1',
+    },
+  ]
 
 //   return (
 //     <div className="container mx-auto py-8">
@@ -111,6 +150,17 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
       closeModal();
     }
   };
+
+  // const imageWidth;
+  // const imageHeight;
+
+  // const getWidth = (photo) => {
+  //   if (photo.width > photo.height) {
+  //     return 500;
+  //   } else {
+  //     return 100;
+  //   }
+  // }
   
   const [isImageExpanded, setImageExpanded] = useState(false);
 
@@ -144,8 +194,25 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
             <Image
               src={photo.src}
               alt={photo.alt}
+              width={800}
+              height={400}
+              className="object-cover cursor-pointer shadow-lg border-2 border-black rounded-lg"
+              // whileHover={{ scale: 1.1 }}
+              // transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            />
+          </motion.div>
+        ))}
+      </div>
+      <div className="pt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {photosVert.map(photosVert => (
+          <motion.div key={photosVert.id} onClick={() => openModal(photosVert)}
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+            <Image
+              src={photosVert.src}
+              alt={photosVert.alt}
               width={500}
-              height={500}
+              height={800}
               className="object-cover cursor-pointer shadow-lg border-2 border-black rounded-lg"
               // whileHover={{ scale: 1.1 }}
               // transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -156,7 +223,8 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
 
       {selectedPhoto && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60"
-        onClick={closeModal}>
+        // onClick={closeModal}
+        >
           <motion.div className="relative"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -173,8 +241,8 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
             <Image
               src={selectedPhoto.src}
               alt={selectedPhoto.alt}
-              width={800}
-              height={800}
+              width={selectedPhoto.id < 100 ? 800 : 500}
+              height={400}
               className="object-contain border-2 border-black rounded-lg"
             />
             <motion.button
@@ -183,7 +251,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
               whileHover={{ scale: 1.07 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              Close
+              <XCircle size={32} weight="fill" className='pr-2 -mt-1'/>
             </motion.button>
           </motion.div>
         </div>
