@@ -12,7 +12,6 @@ const nextConfig = {
   // trailingSlash: true,
   // Optional: Change the output directory `out` -> `dist`
   // distDir: 'dist',
-  basePath: "/zhujhj.github.io",
   images: {
     unoptimized: true
   },
