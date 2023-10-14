@@ -128,7 +128,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 min-h-screen">
+    <div className="container mx-auto px-4 py-8 min-h-screen bg-cover">
       <Head>
         <title>My Personal Profile</title>
         <meta name="description" content="Welcome to my personal profile!" />
@@ -140,10 +140,6 @@ const Home = () => {
         animate="animate"
         variants={fadeIn}
         transition={{ duration: 1.5 }}>
-        {/* <div>
-          <h1 className="text-4xl font-bold">Jason Zhu</h1>
-          <p>Computer Science Student at UBC</p>
-        </div> */}
         <div>
         <div className="justify-center">
           <h1 className="text-6xl font-bold">

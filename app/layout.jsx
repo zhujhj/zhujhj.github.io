@@ -21,8 +21,13 @@ export default function RootLayout({ children }) {
     // </html>
     <html lang="en" className={quicksand.className}>
       {/* <body className={inter.className}>{children}</body> */}
-      <body>
-        <div className="main">
+      <body className=''>
+        <div className="main" style={{
+    backgroundImage: 'url(/images/mountainwindow.jpeg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    backgroundAttachment: 'fixed', // Optional: To fix the background image
+  }}>
           <div className="gradient" />
         </div>
 

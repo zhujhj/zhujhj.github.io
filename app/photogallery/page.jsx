@@ -74,8 +74,18 @@ const PhotoGallery = () => {
       alt: 'Photo 3',
     },
     {
-      id: 12,
+      id: 13,
       src: '/images/pianosfu.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 14,
+      src: '/images/chinatown.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 15,
+      src: '/images/basketball.jpeg',
       alt: 'Photo 3',
     },
     // Add more photos as needed
@@ -88,17 +98,17 @@ const PhotoGallery = () => {
       alt: 'Photo 1',
     },
     {
-      id: 100,
+      id: 101,
       src: '/images/stanleyparkbike.jpeg',
       alt: 'Photo 1',
     },
     {
-      id: 100,
+      id: 102,
       src: '/images/mountainwindow.jpeg',
       alt: 'Photo 1',
     },
     {
-      id: 100,
+      id: 103,
       src: '/images/gastown.jpeg',
       alt: 'Photo 1',
     },
@@ -126,6 +136,7 @@ const PhotoGallery = () => {
 
 // export default PhotoGallery;
 const [selectedPhoto, setSelectedPhoto] = useState(null);
+const [selectedPhotoId, setSelectedPhotoId] = useState(null);
 
   // const openModal = (photo) => {
   //   setSelectedPhoto(photo);
@@ -135,8 +146,10 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
   //   setSelectedPhoto(null);
   // };
 
-  const openModal = (photo) => {
+  const openModal = (photo, id) => {
+    console.log("reached");
     setSelectedPhoto(photo);
+    setSelectedPhotoId(id);
     setImageExpanded(true);
   };
   
@@ -151,16 +164,37 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
     }
   };
 
-  // const imageWidth;
-  // const imageHeight;
+  const previousPhoto = (number) => {
+    // Find the index of the currently selected photo
+    // const currentIndex = photos.findIndex(photo => photo.id === selectedPhoto.id);
 
-  // const getWidth = (photo) => {
-  //   if (photo.width > photo.height) {
-  //     return 500;
-  //   } else {
-  //     return 100;
-  //   }
-  // }
+    // // Calculate the index of the previous photo
+    // const previousIndex = (currentIndex - 1 + photos.length) % photos.length;
+
+    // Select the previous photo
+    // closeModal();
+    openModal(photos[1]);
+  };
+
+  const nextPhoto = (number) => {
+    // Find the index of the currently selected photo
+    // const currentIndex = photos.findIndex(photo => photo.id === selectedPhoto.id);
+
+    // // Calculate the index of the next photo
+    // const nextIndex = (currentIndex + 1) % photos.length;
+
+    // Select the next photo
+    // closeModal();
+    openModal(photos[5]);
+  };
+
+  const handleArrowKeys = (event) => {
+    if (event.key === 'ArrowLeft') {
+      previousPhoto(selectedPhotoId);
+    } else if (event.key === 'ArrowRight') {
+      nextPhoto(selectedPhotoId);
+    }
+  }
   
   const [isImageExpanded, setImageExpanded] = useState(false);
 
@@ -168,6 +202,13 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
     document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleArrowKeys);
+    return () => {
+      document.removeEventListener('keydown', handleArrowKeys);
     };
   }, []);
 
@@ -188,7 +229,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {photos.map(photo => (
-          <motion.div key={photo.id} onClick={() => openModal(photo)}
+          <motion.div key={photo.id} onClick={() => openModal(photo, photo.id)}
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}>
             <Image
@@ -205,7 +246,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
       </div>
       <div className="pt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {photosVert.map(photosVert => (
-          <motion.div key={photosVert.id} onClick={() => openModal(photosVert)}
+          <motion.div key={photosVert.id} onClick={() => openModal(photosVert, photosVert.id)}
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}>
             <Image
@@ -251,7 +292,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
               whileHover={{ scale: 1.07 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <XCircle size={32} weight="fill" className='pr-2 -mt-1'/>
+              <XCircle size={32} weight="fill" className='pr-1 -mt-1'/>
             </motion.button>
           </motion.div>
         </div>

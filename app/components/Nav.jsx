@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 const Nav = () => {
   return (
-    <nav className="bg-gray-800 opacity-100">
+    <nav className="bg-gray-800 opacity-100"> {/* bg-gradient-to-b from-gray-700 via-gray-400 to-transparent*/}
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link href="/">
