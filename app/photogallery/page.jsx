@@ -4,7 +4,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
-import { XCircle } from "phosphor-react";
+import { Users, XCircle } from "phosphor-react";
+import Nav from '../components/Nav';
 
 const PhotoGallery = () => {
   const fadeIn = {
@@ -88,6 +89,31 @@ const PhotoGallery = () => {
       src: '/images/basketball.jpeg',
       alt: 'Photo 3',
     },
+    {
+      id: 16,
+      src: '/images/spanishbanks.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 17,
+      src: '/images/fireworks1.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 18,
+      src: '/images/chipmunk.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 19,
+      src: '/images/mall.jpeg',
+      alt: 'Photo 3',
+    },
+    {
+      id: 20,
+      src: '/images/indigenous.jpeg',
+      alt: 'Photo 3',
+    },
     // Add more photos as needed
   ];
 
@@ -136,7 +162,7 @@ const PhotoGallery = () => {
 
 // export default PhotoGallery;
 const [selectedPhoto, setSelectedPhoto] = useState(null);
-const [selectedPhotoId, setSelectedPhotoId] = useState(null);
+const [isImageExpanded, setImageExpanded] = useState(false);
 
   // const openModal = (photo) => {
   //   setSelectedPhoto(photo);
@@ -146,11 +172,11 @@ const [selectedPhotoId, setSelectedPhotoId] = useState(null);
   //   setSelectedPhoto(null);
   // };
 
-  const openModal = (photo, id) => {
-    console.log("reached");
-    setSelectedPhoto(photo);
-    setSelectedPhotoId(id);
+  const openModal = (photo) => {
+    console.log("opened photo: " + photo.src)
     setImageExpanded(true);
+    setSelectedPhoto(photo);
+    console.log(isImageExpanded);
   };
   
   const closeModal = () => {
@@ -164,7 +190,7 @@ const [selectedPhotoId, setSelectedPhotoId] = useState(null);
     }
   };
 
-  const previousPhoto = (number) => {
+  const previousPhoto = (photo) => {
     // Find the index of the currently selected photo
     // const currentIndex = photos.findIndex(photo => photo.id === selectedPhoto.id);
 
@@ -173,10 +199,13 @@ const [selectedPhotoId, setSelectedPhotoId] = useState(null);
 
     // Select the previous photo
     // closeModal();
-    openModal(photos[1]);
+    console.log("current photo " + selectedPhoto)
+    const currentIndex = photos.findIndex(photo => photo.src === selectedPhoto.src);
+    console.log("current photo src is: " + photo.src);
+    openModal(photos[currentIndex - 1]);
   };
 
-  const nextPhoto = (number) => {
+  const nextPhoto = (photo) => {
     // Find the index of the currently selected photo
     // const currentIndex = photos.findIndex(photo => photo.id === selectedPhoto.id);
 
@@ -185,18 +214,24 @@ const [selectedPhotoId, setSelectedPhotoId] = useState(null);
 
     // Select the next photo
     // closeModal();
-    openModal(photos[5]);
+    
+    openModal(photos[photo.id+1]);
+    // setSelectedPhoto(photos[photo.id+1])
   };
 
   const handleArrowKeys = (event) => {
+    event.preventDefault();
     if (event.key === 'ArrowLeft') {
-      previousPhoto(selectedPhotoId);
+      if (isImageExpanded) {
+        console.log("selectedPhoto: " + selectedPhoto);
+        previousPhoto(selectedPhoto);
+      }
     } else if (event.key === 'ArrowRight') {
-      nextPhoto(selectedPhotoId);
+      if (isImageExpanded) {
+        nextPhoto(selectedPhoto);
+      }
     }
   }
-  
-  const [isImageExpanded, setImageExpanded] = useState(false);
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
@@ -220,7 +255,7 @@ const [selectedPhotoId, setSelectedPhotoId] = useState(null);
         variants={fadeIn}
         transition={{ duration: 2 }}
         >
-      <h1 className="text-4xl font-bold text-left mb-4">Photo Gallery</h1>
+      <h1 className="text-4xl font-bold text-left mb-4 text-gray-300">Photo Gallery</h1>
       <p className='text-gray-600 mb-4 mr-[500px]'>
         One of my personal hobbies is photography. I didn't want to spend
       too much money on a very expensive camera, so I salvaged my dad's old film camera from the closet, a &#160;
@@ -229,7 +264,8 @@ const [selectedPhotoId, setSelectedPhotoId] = useState(null);
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {photos.map(photo => (
-          <motion.div key={photo.id} onClick={() => openModal(photo, photo.id)}
+          <motion.div key={photo.id} onClick={() => {
+            openModal(photo)}}
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}>
             <Image
@@ -245,13 +281,13 @@ const [selectedPhotoId, setSelectedPhotoId] = useState(null);
         ))}
       </div>
       <div className="pt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {photosVert.map(photosVert => (
-          <motion.div key={photosVert.id} onClick={() => openModal(photosVert, photosVert.id)}
+        {photosVert.map(photosVertItem => (
+          <motion.div key={photosVertItem.id} onClick={() => openModal(photosVertItem)}
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}>
             <Image
-              src={photosVert.src}
-              alt={photosVert.alt}
+              src={photosVertItem.src}
+              alt={photosVertItem.alt}
               width={500}
               height={800}
               className="object-cover cursor-pointer shadow-lg border-2 border-black rounded-lg"

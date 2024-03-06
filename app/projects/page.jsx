@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
 
@@ -32,15 +33,36 @@ const Projects = () => {
       </Head>
       
       <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold">Projects & Skills</h1>
+        <h1 className="text-4xl font-bold text-gray-300">Projects & Skills</h1>
       </header>
 
       <main>
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-center">Projects</h2>
-          <div className='flex items-center justify-between border-2 border-black rounded-lg p-3 m-3'>
+          <h2 className="text-2xl font-bold mb-4 text-center text-gray-300">Projects</h2>
+          {/* bizchina */}
+          <div className='flex items-center justify-between border-2 border-purple-300 rounded-lg p-3 m-3 text-gray-500'>
             <div>
-                <h3 className='text-xl font-bold'>Calorie Tracker</h3>
+                <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/zhujhj/bizchina" target="_blank">
+                  UBC Bizchina Internal Task Application &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
+                </a>
+                <p className='italic'>
+                    Technologies: ReactJS, NodeJS, Firebase
+                </p>
+                <li>Developed an internal task management tool for 50+ people at UBC BizChina using ReactJS, NodeJS, and Firebase</li>
+                <li>Implemented robust user authentication with Firebase that allows users to log-in using their Google account</li>
+                <li>Created a drag and drop Kanban board and interactive calendar that saves information to Firestore Database 
+                  using CRUD operations, as well as a real-time chat feature using ChatEngine allowing for efficient communication</li>
+                <li>Deployed the platform to the club and reached 100% positive feedback from club members</li>
+            </div>
+            <img src="/images/bizchina_app.png" 
+            className="object-cover w-[300px] justify-right border-2 border-purple-300 rounded-lg" 
+            // onClick={() => openModal("/images/course4you.png")}
+            />
+          </div>
+          {/* calorie tracker */}
+          <div className='flex items-center justify-between border-2 border-purple-300 rounded-lg p-3 m-3 text-gray-500'>
+            <div>
+                <h3 className='text-xl font-bold text-gray-100'>Calorie Tracker</h3>
                 <p className='italic'>
                     Technologies: Java, Java Swing
                 </p>
@@ -50,13 +72,16 @@ const Projects = () => {
                 <li>Worked with a client to perform a user acceptance test (UAT) to make sure the program meets the client's needs</li>
             </div>
             <img src="/images/calorietracker.png" 
-            className="object-cover w-[300px] justify-right border-2 border-black rounded-lg" 
+            className="object-cover w-[300px] justify-right border-2 border-purple-300 rounded-lg" 
             // onClick={() => openModal("/images/calorietracker.png")}
             />
           </div>
-          <div className='flex items-center justify-between border-2 border-black rounded-lg p-3 m-3'>
+          {/* produhacks */}
+          <div className='flex items-center justify-between border-2 border-purple-300 rounded-lg p-3 m-3 text-gray-500'>
             <div>
-                <a className='text-xl font-bold' href="https://github.com/leowang801/produhacks-team1-2023" target="_blank">Course4You</a>
+                <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/leowang801/produhacks-team1-2023" target="_blank">
+                  Course4You &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
+                </a>
                 {/* <p className=''>
                     Hi there! My name is [Your Name], and this is my personal profile. I'm passionate about [your interests/hobbies], and I love to [what you enjoy doing]. 
                     On this website, you'll find information about my background, skills, projects, and more.
@@ -71,21 +96,21 @@ const Projects = () => {
 
             </div>
             <img src="/images/course4you.png" 
-            className="object-cover w-[300px] justify-right border-2 border-black rounded-lg" 
+            className="object-cover w-[300px] justify-right border-2 border-purple-300 rounded-lg" 
             // onClick={() => openModal("/images/course4you.png")}
             />
           </div>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-center">Skills</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">Skills</h2>
           {/* <ul className="list-disc ml-8">
             <li>Skill 1</li>
             <li>Skill 2</li>
             <li>Skill 3</li>
             <li>...</li>
           </ul> */}
-          <div className='flex justify-center text-center'>
+          <div className='flex justify-center text-center my-3'>
             <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Java</p>
             <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>R</p>
             <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Jupyter Notebook</p>
@@ -100,20 +125,29 @@ const Projects = () => {
             <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Visual Studio Code</p>
             <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>IntelliJ</p>
           </div>
+          <div className='flex justify-center text-center'>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>TypeScript</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>SQL</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Firebase</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>C</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Oracle Database</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>REST API</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>MongoDB</p>
+          </div>
         </section>
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-center">Relevant Courses</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">Relevant Courses</h2>
           {/* <ul className="list-disc ml-8">
             <li>Skill 1</li>
             <li>Skill 2</li>
             <li>Skill 3</li>
             <li>...</li>
           </ul> */}
-          <div className='flex justify-center text-center'>
-            <table className='border-2 border-black rounded-lg p-2 mx-2'>
-              <tr className='border-2 border-black bg-purple-300'>
-                <th className='w-[100px]'>Class Code</th>
-                <th className='w-[400px]'>Class Title</th>
+          <div className='flex justify-center text-center text-gray-500'>
+            <table className='border-2 border-purple-300 rounded-lg p-2 mx-2'>
+              <tr className='border-2 border-purple-300 bg-purple-300'>
+                <th className='w-[100px] text-black'>Class Code</th>
+                <th className='w-[400px] text-black'>Class Title</th>
               </tr>
               <tr> 
                 <td>CPSC 110</td>
@@ -130,6 +164,30 @@ const Projects = () => {
               <tr>
                 <td>CPSC 221</td>
                 <td>Basic Data Structures and Algorithms</td>
+              </tr>
+              <tr>
+                <td>CPSC 213</td>
+                <td>Introduction to Computer Systems</td>
+              </tr>
+              <tr>
+                <td>CPSC 310</td>
+                <td>Introduction to Software Engineering</td>
+              </tr>
+              <tr>
+                <td>CPSC 304</td>
+                <td>Introduction to Relational Databases</td>
+              </tr>
+              <tr>
+                <td>CPSC 320</td>
+                <td>Intermediate Algorithm Design and Analysis</td>
+              </tr>
+              <tr>
+                <td>CPSC 317</td>
+                <td>Internet Computing</td>
+              </tr>
+              <tr>
+                <td>CPSC 340</td>
+                <td>Machine Learning and Data Mining</td>
               </tr>
               <tr>
                 <td>DSCI 100</td>

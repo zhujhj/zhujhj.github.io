@@ -21,20 +21,16 @@ export default function RootLayout({ children }) {
     // </html>
     <html lang="en" className={quicksand.className}>
       {/* <body className={inter.className}>{children}</body> */}
-      <body className=''>
-        <div className="main" style={{
-    backgroundImage: 'url(/images/mountainwindow.jpeg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
-    backgroundAttachment: 'fixed', // Optional: To fix the background image
-  }}>
-          <div className="gradient" />
+      <body className='bg-black'>
+      {/* style={{ backgroundImage: "url(/images/mistymountain.jpeg" }} */}
+        <div className="main">
+          <div className="" /> {/*gradient */}
         </div>
 
         <main className="app">
           <Nav />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </main>
       </body>
     </html>
