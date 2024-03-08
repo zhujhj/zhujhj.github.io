@@ -15,6 +15,11 @@ const PhotoGallery = () => {
 
   const photos = [
     {
+      id: 0,
+      src: '/images/spanishbanks.jpeg',
+      alt: 'Photo 3',
+    },
+    {
       id: 1,
       src: '/images/bryantstephen.jpeg',
       alt: 'Photo 1',
@@ -91,7 +96,7 @@ const PhotoGallery = () => {
     },
     {
       id: 16,
-      src: '/images/spanishbanks.jpeg',
+      src: '/images/indigenous.jpeg',
       alt: 'Photo 3',
     },
     {
@@ -107,11 +112,6 @@ const PhotoGallery = () => {
     {
       id: 19,
       src: '/images/mall.jpeg',
-      alt: 'Photo 3',
-    },
-    {
-      id: 20,
-      src: '/images/indigenous.jpeg',
       alt: 'Photo 3',
     },
     // Add more photos as needed
@@ -163,6 +163,8 @@ const PhotoGallery = () => {
 // export default PhotoGallery;
 const [selectedPhoto, setSelectedPhoto] = useState(null);
 const [isImageExpanded, setImageExpanded] = useState(false);
+const [leftPhotoID, setLeftPhotoID] = useState(null);
+const [rightPhotoID, setRightPhotoID] = useState(null);
 
   // const openModal = (photo) => {
   //   setSelectedPhoto(photo);
@@ -173,63 +175,59 @@ const [isImageExpanded, setImageExpanded] = useState(false);
   // };
 
   const openModal = (photo) => {
-    console.log("opened photo: " + photo.src)
-    setImageExpanded(true);
     setSelectedPhoto(photo);
-    console.log(isImageExpanded);
+    setImageExpanded(true);
+    // console.log("opened photo: " + photo.src);
+    // console.log("opened photo id: " + photo.id);
+    // setLeftPhotoID(photo.id - 1);
+    // setRightPhotoID(photo.id + 1);
+    // console.log("left id: " + leftPhotoID);
+    // console.log("right id: " + rightPhotoID);
+    // console.log("image expanded: " + isImageExpanded);
+    // console.log(isImageExpanded);
+    // console.log(selectedPhoto);
   };
   
   const closeModal = () => {
     setSelectedPhoto(null);
     setImageExpanded(false);
+    setLeftPhotoID(null);
+    setRightPhotoID(null);
   };
 
   const handleKeyDown = (event) => {
     if (event.key === 'Escape') {
+      // console.log(event);
       closeModal();
     }
-  };
-
-  const previousPhoto = (photo) => {
-    // Find the index of the currently selected photo
-    // const currentIndex = photos.findIndex(photo => photo.id === selectedPhoto.id);
-
-    // // Calculate the index of the previous photo
-    // const previousIndex = (currentIndex - 1 + photos.length) % photos.length;
-
-    // Select the previous photo
-    // closeModal();
-    console.log("current photo " + selectedPhoto)
-    const currentIndex = photos.findIndex(photo => photo.src === selectedPhoto.src);
-    console.log("current photo src is: " + photo.src);
-    openModal(photos[currentIndex - 1]);
-  };
-
-  const nextPhoto = (photo) => {
-    // Find the index of the currently selected photo
-    // const currentIndex = photos.findIndex(photo => photo.id === selectedPhoto.id);
-
-    // // Calculate the index of the next photo
-    // const nextIndex = (currentIndex + 1) % photos.length;
-
-    // Select the next photo
-    // closeModal();
-    
-    openModal(photos[photo.id+1]);
-    // setSelectedPhoto(photos[photo.id+1])
   };
 
   const handleArrowKeys = (event) => {
     event.preventDefault();
     if (event.key === 'ArrowLeft') {
-      if (isImageExpanded) {
-        console.log("selectedPhoto: " + selectedPhoto);
-        previousPhoto(selectedPhoto);
-      }
+      // console.log("detected left");
+      // if (isImageExpanded) {
+      //   console.log(selectedPhoto);
+      //   leftPhoto(selectedPhoto);
+      // } else {
+      //   console.log("photo was not expanded");
+      // }
+      // console.log("left photo id " + leftPhotoID);
+      // closeModal();
+      // console.log(photos[leftPhotoID]);
+      // openModal(photos[leftPhotoID]);
+      // console.log("reaches here");
+      // setLeftPhotoID(leftPhotoID - 1);
+      // console.log(leftPhotoID);
+      // setRightPhotoID(leftPhotoID + 1);
+      // console.log(rightPhotoID);
     } else if (event.key === 'ArrowRight') {
-      if (isImageExpanded) {
-        nextPhoto(selectedPhoto);
-      }
+      console.log("right photo id " + rightPhotoID);
+      // closeModal();
+      // openModal(photos[rightPhotoID]);
+      // if (isImageExpanded) {
+        // nextPhoto(selectedPhoto);
+      // }
     }
   }
 
@@ -246,6 +244,11 @@ const [isImageExpanded, setImageExpanded] = useState(false);
       document.removeEventListener('keydown', handleArrowKeys);
     };
   }, []);
+
+  useEffect(() => {
+    console.log("isImageExpanded:", isImageExpanded);
+    console.log("selectedPhoto:", selectedPhoto);
+  }, [isImageExpanded, selectedPhoto]);
 
   return (
     <motion.div

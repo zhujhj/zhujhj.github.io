@@ -40,7 +40,7 @@ const Projects = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-center text-gray-300">Projects</h2>
           {/* bizchina */}
-          <div className='flex items-center justify-between border-2 border-purple-300 rounded-lg p-3 m-3 text-gray-500'>
+          <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/zhujhj/bizchina" target="_blank">
                   UBC Bizchina Internal Task Application &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
@@ -55,12 +55,32 @@ const Projects = () => {
                 <li>Deployed the platform to the club and reached 100% positive feedback from club members</li>
             </div>
             <img src="/images/bizchina_app.png" 
-            className="object-cover w-[300px] justify-right border-2 border-purple-300 rounded-lg" 
+            className="object-cover w-[300px] justify-right border-2 border-gray-500 rounded-lg" 
+            // onClick={() => openModal("/images/course4you.png")}
+            />
+          </div>
+          {/* insightubc */}
+          <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+            <div>
+                <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://www.youtube.com/watch?v=A8YGxr8qbaQ" target="_blank">
+                  insightUBC Course Finder &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
+                </a>
+                <p className='italic'>
+                  Technologies: TypeScript, NodeJS, ExpressJS, ReactJS
+                </p>
+                <li>Collaborated with a partner to develop a full-stack application that enables effective querying of historical data 
+                regarding the sections and rooms of UBC using TypeScript, NodeJS, ExpressJS, and ReactJS</li>
+                <li>Unzipped, parsed, and extracted information to query from zipped JSON and HTML files using JSZip and parse5</li>
+                <li>Used REST API endpoints to make HTTP requests and seamlessly connect the front and back end of the application</li>
+                <li>Wrote an exhaustive set of 100+ tests using Chai and Mocha to ensure the program is functioning as expected</li>
+            </div>
+            <img src="/images/insightubc.png" 
+            className="object-cover w-[300px] justify-right border-2 border-gray-500 rounded-lg" 
             // onClick={() => openModal("/images/course4you.png")}
             />
           </div>
           {/* calorie tracker */}
-          <div className='flex items-center justify-between border-2 border-purple-300 rounded-lg p-3 m-3 text-gray-500'>
+          <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <h3 className='text-xl font-bold text-gray-100'>Calorie Tracker</h3>
                 <p className='italic'>
@@ -72,12 +92,12 @@ const Projects = () => {
                 <li>Worked with a client to perform a user acceptance test (UAT) to make sure the program meets the client's needs</li>
             </div>
             <img src="/images/calorietracker.png" 
-            className="object-cover w-[300px] justify-right border-2 border-purple-300 rounded-lg" 
+            className="object-cover w-[300px] justify-right border-2 border-gray-500 rounded-lg" 
             // onClick={() => openModal("/images/calorietracker.png")}
             />
           </div>
           {/* produhacks */}
-          <div className='flex items-center justify-between border-2 border-purple-300 rounded-lg p-3 m-3 text-gray-500'>
+          <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/leowang801/produhacks-team1-2023" target="_blank">
                   Course4You &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
@@ -96,7 +116,7 @@ const Projects = () => {
 
             </div>
             <img src="/images/course4you.png" 
-            className="object-cover w-[300px] justify-right border-2 border-purple-300 rounded-lg" 
+            className="object-cover w-[300px] justify-right border-2 border-gray-500 rounded-lg" 
             // onClick={() => openModal("/images/course4you.png")}
             />
           </div>
@@ -111,28 +131,28 @@ const Projects = () => {
             <li>...</li>
           </ul> */}
           <div className='flex justify-center text-center my-3'>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Java</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>R</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Jupyter Notebook</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>C++</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Python</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>HTML</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>CSS</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>JavaScript</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>React.js</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Next.js</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Git</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Visual Studio Code</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>IntelliJ</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Java</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>R</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Jupyter Notebook</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>C++</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Python</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>HTML</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>CSS</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>JavaScript</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>React.js</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Next.js</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Git</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Visual Studio Code</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>IntelliJ</p>
           </div>
           <div className='flex justify-center text-center'>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>TypeScript</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>SQL</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Firebase</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>C</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>Oracle Database</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>REST API</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-purple-300'>MongoDB</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>TypeScript</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>SQL</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Firebase</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>C</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Oracle Database</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>REST API</p>
+            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>MongoDB</p>
           </div>
         </section>
         <section className="mb-8">
@@ -144,8 +164,8 @@ const Projects = () => {
             <li>...</li>
           </ul> */}
           <div className='flex justify-center text-center text-gray-500'>
-            <table className='border-2 border-purple-300 rounded-lg p-2 mx-2'>
-              <tr className='border-2 border-purple-300 bg-purple-300'>
+            <table className='border-2 border-gray-500 rounded-lg p-2 mx-2'>
+              <tr className='border-2 border-gray-500 bg-gray-500'>
                 <th className='w-[100px] text-black'>Class Code</th>
                 <th className='w-[400px] text-black'>Class Title</th>
               </tr>
