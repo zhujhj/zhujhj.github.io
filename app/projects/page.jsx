@@ -43,7 +43,7 @@ const Projects = () => {
           <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/zhujhj/bizchina" target="_blank">
-                  UBC Bizchina Internal Task Application &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
+                  UBC BizChina Internal Task Application &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
                 </a>
                 <p className='italic'>
                     Technologies: ReactJS, NodeJS, Firebase
@@ -82,7 +82,9 @@ const Projects = () => {
           {/* calorie tracker */}
           <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
-                <h3 className='text-xl font-bold text-gray-100'>Calorie Tracker</h3>
+                <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/zhujhj/Calorie-Tracker" target="_blank">
+                  Calorie Tracker &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
+                </a>
                 <p className='italic'>
                     Technologies: Java, Java Swing
                 </p>

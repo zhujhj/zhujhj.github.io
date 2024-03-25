@@ -37,6 +37,14 @@ const Nav = () => {
             <motion.li
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+              <Link href="/experience">
+                <h1 className="text-gray-500 hover:text-white">Experience</h1>
+                {/* text-gray-300 hover:text-white */}
+              </Link>
+            </motion.li>
+            <motion.li
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}>
               <Link href="https://www.linkedin.com/in/jason-zhu4" target="_blank">
                 {/* <h1 className="text-gray-300 hover:text-white">Contact</h1> */}
                 <AiFillLinkedin size={26} className='text-gray-500 hover:text-white'/>
