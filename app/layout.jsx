@@ -4,9 +4,11 @@ import { Inter } from 'next/font/google'
 import { Quicksand } from 'next/font/google'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import { Courier_Prime } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 const quicksand = Quicksand({ subsets: ['latin'] })
+const courier = Courier_Prime({ subsets: ['latin'], weight: '400' })
 
 export const metadata = {
   title: 'Jason Zhu',

@@ -80,7 +80,7 @@ const Projects = () => {
             />
           </div>
           {/* calorie tracker */}
-          <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex items-top justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/zhujhj/Calorie-Tracker" target="_blank">
                   Calorie Tracker &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
@@ -99,7 +99,7 @@ const Projects = () => {
             />
           </div>
           {/* produhacks */}
-          <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex items-top justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/leowang801/produhacks-team1-2023" target="_blank">
                   Course4You &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 

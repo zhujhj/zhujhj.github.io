@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-screen px-4 py-8 min-h-screen bg-cover" 
+    <div className="min-w-screen px-4 py-8 min-h-screen bg-cover" 
     // style={{
     //   backgroundImage: 'url(/images/mistymountain.jpeg)'
     // }}

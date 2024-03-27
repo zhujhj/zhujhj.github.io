@@ -50,7 +50,7 @@ const Projects = () => {
                 <p className='italic'>
                     UBC BizChina
                 </p>
-                <li>Developed an internal task management tool in a group of 7 developers, demonstrating excellent teamwork skills 
+                <li>Developed an internal task management tool in a group of 6 developers, demonstrating excellent teamwork skills 
                     (more about the project can be found in the <a href='/projects' className='font-bold text-decoration-line: underline'>Projects & Skills</a> section)</li>
                 <li>Participated in general meetings to present the project to the president and other members, ensuring client satisfaction with progress</li>
                 <li>Fulfilled other club responsibilities such as participating in events, such as the 2023 Welcome Back Event</li>
@@ -63,7 +63,7 @@ const Projects = () => {
           {/* bizchina */}
           <div className='flex items-top justify-start border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
                 <img src="/images/Gap_logo.svg.png" 
-                    className="mr-4 object-cover w-[150px] justify-right border-2 border-gray-500 rounded-lg" 
+                    className="mr-4 object-cover w-[150px] h-[150px] justify-right border-2 border-gray-500 rounded-lg" 
                     // onClick={() => openModal("/images/course4you.png")}
                 />
             <div>
