@@ -45,14 +45,14 @@ const Home = () => {
           <section className="mb-8 flex-auto">
           {/* border-2 border-black rounded-lg text-white p-3 bg-black opacity-75 */}
             <h2 className="text-2xl font-bold mb-4 text-left  text-gray-300">About Me</h2>
-            <p className='text-left text-gray-400'>
+            <p className='text-left text-gray-400 w-4/5'>
               Hi there! My name is Jason Zhu, and I am a 3rd year BSc Computer Science student at the University of British Columbia. 
               I'm passionate about coding and anything tech related. When I'm not working, I like to play sports such as basketball, hockey,
               and more. I also like to play guitar, ski, and explore the outdoors. I have recently tried to get into photography as well.
               On this website, you'll find information about my background, skills, projects, and more.
             </p>
           </section>
-          <div className="border-2 border-black w-[200px] h-[200px] rounded-full overflow-hidden flex-none">
+          <div className="border-2 border-black w-[200px] h-[200px] rounded-full overflow-hidden flex-none m-10">
             <img src="/images/9282F4AB-EBF7-44BA-BB5D-798AF45D4222_1_105_c.jpeg" alt="Profile" className="object-cover w-full h-full" />
           </div>
         </div>
