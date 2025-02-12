@@ -40,7 +40,7 @@ const Projects = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-center text-gray-300">Projects</h2>
           {/* bizchina */}
-          <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex flex-col md:flex-row items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/zhujhj/bizchina" target="_blank">
                   UBC BizChina Internal Task Application &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
@@ -60,7 +60,7 @@ const Projects = () => {
             />
           </div>
           {/* insightubc */}
-          <div className='flex items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex flex-col md:flex-row items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://www.youtube.com/watch?v=A8YGxr8qbaQ" target="_blank">
                   insightUBC Course Finder &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
@@ -80,7 +80,7 @@ const Projects = () => {
             />
           </div>
           {/* calorie tracker */}
-          <div className='flex items-top justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex flex-col md:flex-row items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/zhujhj/Calorie-Tracker" target="_blank">
                   Calorie Tracker &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
@@ -99,7 +99,7 @@ const Projects = () => {
             />
           </div>
           {/* produhacks */}
-          <div className='flex items-top justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex flex-col md:flex-row items-center justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <div>
                 <a className='text-xl font-bold text-gray-100 flex justify-start' href="https://github.com/leowang801/produhacks-team1-2023" target="_blank">
                   Course4You &nbsp; <FaExternalLinkAlt size={15} className='text-gray-100 mt-1.5'/> 
@@ -132,29 +132,27 @@ const Projects = () => {
             <li>Skill 3</li>
             <li>...</li>
           </ul> */}
-          <div className='flex justify-center text-center my-3'>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Java</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>R</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Jupyter Notebook</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>C++</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Python</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>HTML</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>CSS</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>JavaScript</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>React.js</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Next.js</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Git</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Visual Studio Code</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>IntelliJ</p>
-          </div>
-          <div className='flex justify-center text-center'>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>TypeScript</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>SQL</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Firebase</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>C</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>Oracle Database</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>REST API</p>
-            <p className='border-2 border-black rounded-lg p-2 mx-2 bg-gray-500'>MongoDB</p>
+          <div className="flex flex-wrap justify-center gap-3 my-3">
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>Java</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>R</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>Jupyter Notebook</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>C++</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>Python</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>HTML</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>CSS</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>JavaScript</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>React.js</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>Next.js</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>Git</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>Visual Studio Code</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>IntelliJ</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>TypeScript</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>SQL</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>Firebase</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>C</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>Oracle Database</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>REST API</p>
+            <p className='border-2 border-black rounded-lg p-2 bg-gray-500'>MongoDB</p>
           </div>
         </section>
         <section className="mb-8">

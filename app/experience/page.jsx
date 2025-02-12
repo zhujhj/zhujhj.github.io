@@ -39,9 +39,9 @@ const Projects = () => {
       <main>
       <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-center text-gray-300">Work Experience</h2>
-          <div className='flex items-top justify-start border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex flex-col md:flex-row items-center md:items-top justify-start border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
                 <img src="/images/absolute.jpeg" 
-                    className="mr-4 object-cover w-[150px] h-[150px] justify-right border-2 border-gray-500 rounded-lg" 
+                    className="mr-4 object-cover w-52 h-52 justify-right border-2 border-gray-500 rounded-lg mb-4 md:mb-0" 
                     // onClick={() => openModal("/images/course4you.png")}
                 />
             <div>
@@ -49,12 +49,16 @@ const Projects = () => {
                 <p className='italic'>
                     Absolute Software
                 </p>
-                <li>Incoming September 2024</li>
+                <li>Created an automated script using Python to enroll Windows and Mac devices using VMs on Absolute production accounts for testing, eliminating tedious manual work and reducing enrollment time by 75%</li>
+                <li>Designed RESTful API endpoints to manipulate Virtual Machines for Mac Minis</li>
+                <li>Developed automated end-to-end tests for multiple components in the Absolute console using Java and Selenium</li>
+                <li>Optimized test suite runtime by removing and improving code, leading to test suites running 26% faster</li>
+                <li>Implemented a performance script using Puppeteer and JavaScript to validate UI element loading speeds</li>
             </div>
           </div>
-          <div className='flex items-top justify-start border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
-                <img src="/images/ubcmedicine.png" 
-                    className="mr-4 object-cover w-[150px] h-[150px] justify-right border-2 border-gray-500 rounded-lg" 
+          <div className='flex flex-col md:flex-row items-center md:items-top md:justify-start border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+                <img src="/images/ubcmedicine.png"
+                    className="mr-4 object-cover w-52 h-52 justify-right border-2 border-gray-500 rounded-lg mb-4 md:mb-0" 
                     // onClick={() => openModal("/images/course4you.png")}
                 />
             <div>
@@ -69,9 +73,9 @@ const Projects = () => {
             </div>
             </div>
           {/* bizchina */}
-          <div className='flex items-top justify-start border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex flex-col md:flex-row items-center md:items-top justify-start border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
                 <img src="/images/Gap_logo.svg.png" 
-                    className="mr-4 object-cover w-[150px] h-[150px] justify-right border-2 border-gray-500 rounded-lg" 
+                    className="mr-4 object-cover w-52 h-52 justify-right border-2 border-gray-500 rounded-lg mb-4 md:mb-0" 
                     // onClick={() => openModal("/images/course4you.png")}
                 />
             <div>
@@ -89,9 +93,9 @@ const Projects = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-center text-gray-300">Technical Experience</h2>
           {/* bizchina */}
-          <div className='flex items-top justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
+          <div className='flex flex-col md:flex-row items-center md:items-top justify-between border-2 border-gray-500 rounded-lg p-3 m-3 mb-5 text-gray-500'>
             <img src="/images/logobizchina.png" 
-                className="mr-4 object-cover w-[150px] h-[150px] justify-right border-2 border-gray-500 rounded-lg" 
+                className="mr-4 object-cover w-52 h-52 justify-right border-2 border-gray-500 rounded-lg mb-4 md:mb-0" 
                 // onClick={() => openModal("/images/course4you.png")}
             />
             <div>

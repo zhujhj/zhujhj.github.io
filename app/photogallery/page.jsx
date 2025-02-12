@@ -204,6 +204,9 @@ const [rightPhotoID, setRightPhotoID] = useState(null);
 
   const handleArrowKeys = (event) => {
     event.preventDefault();
+    console.log(isImageExpanded)
+    if (!isImageExpanded) return;
+    let newIndex;
     if (event.key === 'ArrowLeft') {
       // console.log("detected left");
       // if (isImageExpanded) {
@@ -222,7 +225,21 @@ const [rightPhotoID, setRightPhotoID] = useState(null);
       // setRightPhotoID(leftPhotoID + 1);
       // console.log(rightPhotoID);
     } else if (event.key === 'ArrowRight') {
-      console.log("right photo id " + rightPhotoID);
+      // console.log("right photo id " + rightPhotoID);
+
+      // console.log(isImageExpanded)
+      // if (isImageExpanded) {
+      //   console.log(selectedPhoto.id)
+      //   let rightID = selectedPhoto.id + 1
+      //   closeModal();
+      //   openModal(photos[rightID]);
+      // }
+
+      newIndex = photos.findIndex(photo => photo.id === selectedPhoto.id) + 1;
+    if (newIndex < photos.length) {
+      setSelectedPhoto(photos[newIndex]);
+    }
+
       // closeModal();
       // openModal(photos[rightPhotoID]);
       // if (isImageExpanded) {
@@ -258,12 +275,11 @@ const [rightPhotoID, setRightPhotoID] = useState(null);
         variants={fadeIn}
         transition={{ duration: 2 }}
         >
-      <h1 className="text-4xl font-bold text-left mb-4 text-gray-300">Photo Gallery</h1>
-      <p className='text-gray-600 mb-4 mr-[500px]'>
+      <h1 className="text-4xl font-bold text-left m-4 text-gray-300">Photo Gallery</h1>
+      <p className='text-gray-500 m-4'>
         One of my personal hobbies is photography. I didn't want to spend
-      too much money on a very expensive camera, so I salvaged my dad's old film camera from the closet, a &#160;
-      <span className='font-bold'>Ricoh KR-5 Super II</span>.
-      Right now, I am playing around with it, and here are some of my favourite photos I have taken.
+      too much money on a very expensive camera, so I salvaged my dad's old film camera from the closet, a
+      Ricoh KR-5 Super II. Right now, I am playing around with it, and here are some of my favourite photos.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {photos.map(photo => (

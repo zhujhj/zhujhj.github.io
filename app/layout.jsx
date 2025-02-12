@@ -2,10 +2,12 @@ import './globals.css'
 // import { Inter } from 'next/font/google'
 import { Inter } from 'next/font/google'
 import { Quicksand } from 'next/font/google'
+import { Raleway } from 'next/font/google'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import { Courier_Prime } from 'next/font/google'
 
+const raleway = Raleway({ subsets: ['latin'], weight: '200' })
 const inter = Inter({ subsets: ['latin'] })
 const quicksand = Quicksand({ subsets: ['latin'] })
 const courier = Courier_Prime({ subsets: ['latin'], weight: '400' })
@@ -21,7 +23,7 @@ export default function RootLayout({ children }) {
     //   <Nav></Nav>
     //   <body className={inter.className}>{children}</body>
     // </html>
-    <html lang="en" className={quicksand.className}>
+    <html lang="en" className={raleway.className}>
       {/* <body className={inter.className}>{children}</body> */}
       <body className='bg-black'>
       {/* style={{ backgroundImage: "url(/images/mistymountain.jpeg" }} */}
