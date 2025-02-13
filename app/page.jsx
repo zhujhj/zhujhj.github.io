@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Cake, MapPin, Envelope, Student } from 'phosphor-react';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import Footer from './components/Footer';
+import { useState } from 'react';
 
 const Home = () => {
 
@@ -12,6 +13,8 @@ const Home = () => {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
   };
+
+  const[flipped, setFlipped] = useState(false)
 
   return (
     <div className="min-w-screen px-4 py-8 min-h-screen bg-cover">
@@ -28,7 +31,7 @@ const Home = () => {
         variants={fadeIn}
         transition={{ duration: 1.5 }}>
         <div className="justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-left text-gray-300">
+          <h1 className="text-4xl md:text-6xl font-bold text-left text-gray-300 pb-2">
             Jason Zhu
           </h1>
           <p className='text-left text-gray-400'>Undergraduate Computer Science Student at UBC</p>
@@ -43,9 +46,15 @@ const Home = () => {
               On this website, you'll find information about my background, skills, projects, and more.
             </p>
           </section>
-          <div className="border-2 border-black w-48 h-48 md:w-48 md:h-48 rounded-full overflow-hidden m-4 md:m-10 border-2 border-gray-400">
+          <motion.div 
+            className="border-2 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden m-4 md:m-10 border-2 border-gray-400"
+            whileHover={{ scale: 1.1 }}
+            animate={{ rotateY: flipped ? 180 : 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut", type: "spring", stiffness: 400, damping: 10 }}
+            onClick={() => setFlipped(!flipped)}
+            >
             <img src="/images/9282F4AB-EBF7-44BA-BB5D-798AF45D4222_1_105_c.jpeg" alt="Profile" className="object-cover w-full h-full" />
-          </div>
+          </motion.div>
         </div>
       </motion.header>
 

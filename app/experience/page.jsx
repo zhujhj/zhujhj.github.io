@@ -46,9 +46,9 @@ const Projects = () => {
                 />
             <div>
                 <h2 className='text-xl font-bold text-gray-100 flex justify-start'>Associate Software Developer in Test</h2>
-                <p className='italic'>
+                <a className='italic' href='https://www.absolute.com/' target='_blank'>
                     Absolute Software
-                </p>
+                </a>
                 <li>Created an automated script using Python to enroll Windows and Mac devices using VMs on Absolute production accounts for testing, eliminating tedious manual work and reducing enrollment time by 75%</li>
                 <li>Designed RESTful API endpoints to manipulate Virtual Machines for Mac Minis</li>
                 <li>Developed automated end-to-end tests for multiple components in the Absolute console using Java and Selenium</li>
@@ -63,9 +63,9 @@ const Projects = () => {
                 />
             <div>
                 <h2 className='text-xl font-bold text-gray-100 flex justify-start'>Digital Platform Assistant</h2>
-                <p className='italic'>
+                <a className='italic' href='https://tangdiabeteslab.com/' target='_blank'>
                     UBC Department of Medicine - Tang Diabetes Lab
-                </p>
+                </a>
                 <li>Contributed in the development and application support of the Type 1 Diabetes Reachout/NEXGen mobile and web app, serving 100+ participants and 70+ peer supporters</li>
                 <li>Conducted code reviews and identified bugs in both mobile and web versions of the application using TypeScript</li>
                 <li>Collaborated in cross-functional meetings with the research team and software developers</li>
@@ -80,9 +80,9 @@ const Projects = () => {
                 />
             <div>
                 <h2 className='text-xl font-bold text-gray-100 flex justify-start'>Sales Associate</h2>
-                <p className='italic'>
+                <a className='italic' href='https://www.gapcanada.ca/' target='_blank'>
                     Gap Inc.
-                </p>
+                </a>
                 <li>Operated cash counter efficiently and accurately while providing excellent customer service during checkout</li>
                 <li>Used product knowledge to provide customers information and advice about different items, boosting sales by 24%</li>
                 <li>Maintained cleanliness and organization of the sales floor and fitting rooms, ensuring a pleasant shopping environment for clientele</li>
@@ -100,9 +100,9 @@ const Projects = () => {
             />
             <div>
                 <h2 className='text-xl font-bold text-gray-100 flex justify-start'>Software Developer</h2>
-                <p className='italic'>
+                <a className='italic' href='https://www.ubcchinaforum.com/' target='_blank'>
                     UBC BizChina
-                </p>
+                </a>
                 <li>Developed an internal task management tool in a group of 6 developers, demonstrating excellent teamwork skills 
                     (more about the project can be found in the <a href='/projects' className='font-bold text-decoration-line: underline'>Projects & Skills</a> section)</li>
                 <li>Participated in general meetings to present the project to the president and other members, ensuring client satisfaction with progress</li>
