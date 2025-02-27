@@ -21,153 +21,175 @@ const PhotoGallery = () => {
     }
   };
 
-  const photos = [
+  // Combine all photos into one array and add aspect ratio information
+  const allPhotos = [
     {
       id: 0,
       src: '/images/spanishbanks.jpeg',
       alt: 'Spanish Banks',
       title: 'Spanish Banks',
+      aspectRatio: 'landscape'
     },
     {
       id: 1,
       src: '/images/bryantstephen.jpeg',
       alt: 'Bryant and Stephen',
       title: 'Friends at UBC',
+      aspectRatio: 'landscape'
     },
     {
       id: 2,
       src: '/images/chineserestaurant.jpeg',
       alt: 'Chinese Restaurant',
       title: 'Chinese Restaurant',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 100,
+      src: '/images/verticalsunset.jpeg',
+      alt: 'Vertical Sunset',
+      title: 'Sunset View',
+      aspectRatio: 'portrait'
     },
     {
       id: 3,
       src: '/images/group1.jpeg',
       alt: 'Group Photo 1',
       title: 'Group Photo 1',
-    },
-    {
-      id: 4,
-      src: '/images/group2.jpeg',
-      alt: 'Group Photo 2',
-      title: 'Group Photo 2',
-    },
-    {
-      id: 5,
-      src: '/images/jackphilipstephen.jpeg',
-      alt: 'Jack, Philip, and Stephen',
-      title: 'Jack, Philip, and Stephen',
-    },
-    {
-      id: 6,
-      src: '/images/lights.jpeg',
-      alt: 'Lights',
-      title: 'Lights',
-    },
-    {
-      id: 7,
-      src: '/images/skyline1.jpeg',
-      alt: 'Skyline',
-      title: 'Skyline',
-    },
-    {
-      id: 8,
-      src: '/images/stephen.jpeg',
-      alt: 'Stephen',
-      title: 'Stephen',
-    },
-    {
-      id: 9,
-      src: '/images/CE74FC1D-0CC2-4992-9C9E-5ACB4DBAA837_1_105_c.jpeg',
-      alt: 'Photo 3',
-      title: 'Photo 3',
-    },
-    {
-      id: 10,
-      src: '/images/5615371C-F970-4D3D-8D60-D6FCA9E18C80_1_105_c.jpeg',
-      alt: 'Photo 3',
-      title: 'Photo 3',
-    },
-    {
-      id: 11,
-      src: '/images/kitssunset.jpeg',
-      alt: 'Kits Sunset',
-      title: 'Kits Sunset',
-    },
-    {
-      id: 12,
-      src: '/images/mistymountain.jpeg',
-      alt: 'Misty Mountain',
-      title: 'Misty Mountain',
-    },
-    {
-      id: 13,
-      src: '/images/pianosfu.jpeg',
-      alt: 'Pianosfu',
-      title: 'Pianosfu',
-    },
-    {
-      id: 14,
-      src: '/images/chinatown.jpeg',
-      alt: 'Chinatown',
-      title: 'Chinatown',
-    },
-    {
-      id: 15,
-      src: '/images/basketball.jpeg',
-      alt: 'Basketball',
-      title: 'Basketball',
-    },
-    {
-      id: 16,
-      src: '/images/indigenous.jpeg',
-      alt: 'Indigenous',
-      title: 'Indigenous',
-    },
-    {
-      id: 17,
-      src: '/images/fireworks1.jpeg',
-      alt: 'Fireworks',
-      title: 'Fireworks',
-    },
-    {
-      id: 18,
-      src: '/images/chipmunk.jpeg',
-      alt: 'Chipmunk',
-      title: 'Chipmunk',
-    },
-    {
-      id: 19,
-      src: '/images/mall.jpeg',
-      alt: 'Mall',
-      title: 'Mall',
-    },
-  ];
-
-  const photosVert = [
-    {
-      id: 100,
-      src: '/images/verticalsunset.jpeg',
-      alt: 'Vertical Sunset',
-      title: 'Sunset View',
+      aspectRatio: 'landscape'
     },
     {
       id: 101,
       src: '/images/stanleyparkbike.jpeg',
       alt: 'Stanley Park Bike',
       title: 'Stanley Park Bike',
+      aspectRatio: 'portrait'
+    },
+    {
+      id: 4,
+      src: '/images/group2.jpeg',
+      alt: 'Group Photo 2',
+      title: 'Group Photo 2',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 5,
+      src: '/images/jackphilipstephen.jpeg',
+      alt: 'Jack, Philip, and Stephen',
+      title: 'Jack, Philip, and Stephen',
+      aspectRatio: 'landscape'
     },
     {
       id: 102,
       src: '/images/mountainwindow.jpeg',
       alt: 'Mountain Window',
       title: 'Mountain Window',
+      aspectRatio: 'portrait'
+    },
+    {
+      id: 6,
+      src: '/images/lights.jpeg',
+      alt: 'Lights',
+      title: 'Lights',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 7,
+      src: '/images/skyline1.jpeg',
+      alt: 'Skyline',
+      title: 'Skyline',
+      aspectRatio: 'landscape'
     },
     {
       id: 103,
       src: '/images/gastown.jpeg',
       alt: 'Gastown',
       title: 'Gastown',
+      aspectRatio: 'portrait'
+    },
+    {
+      id: 8,
+      src: '/images/stephen.jpeg',
+      alt: 'Stephen',
+      title: 'Stephen',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 9,
+      src: '/images/CE74FC1D-0CC2-4992-9C9E-5ACB4DBAA837_1_105_c.jpeg',
+      alt: 'Photo 3',
+      title: 'Photo 3',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 10,
+      src: '/images/5615371C-F970-4D3D-8D60-D6FCA9E18C80_1_105_c.jpeg',
+      alt: 'Photo 3',
+      title: 'Photo 3',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 11,
+      src: '/images/kitssunset.jpeg',
+      alt: 'Kits Sunset',
+      title: 'Kits Sunset',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 12,
+      src: '/images/mistymountain.jpeg',
+      alt: 'Misty Mountain',
+      title: 'Misty Mountain',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 13,
+      src: '/images/pianosfu.jpeg',
+      alt: 'Pianosfu',
+      title: 'Pianosfu',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 14,
+      src: '/images/chinatown.jpeg',
+      alt: 'Chinatown',
+      title: 'Chinatown',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 15,
+      src: '/images/basketball.jpeg',
+      alt: 'Basketball',
+      title: 'Basketball',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 16,
+      src: '/images/indigenous.jpeg',
+      alt: 'Indigenous',
+      title: 'Indigenous',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 17,
+      src: '/images/fireworks1.jpeg',
+      alt: 'Fireworks',
+      title: 'Fireworks',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 18,
+      src: '/images/chipmunk.jpeg',
+      alt: 'Chipmunk',
+      title: 'Chipmunk',
+      aspectRatio: 'landscape'
+    },
+    {
+      id: 19,
+      src: '/images/mall.jpeg',
+      alt: 'Mall',
+      title: 'Mall',
+      aspectRatio: 'landscape'
     },
   ];
 
@@ -195,7 +217,6 @@ const PhotoGallery = () => {
   const handleArrowKeys = (event) => {
     if (!isImageExpanded) return;
     
-    const allPhotos = [...photos, ...photosVert];
     const currentIndex = allPhotos.findIndex(photo => photo.id === selectedPhoto.id);
     
     if (event.key === 'ArrowLeft' && currentIndex > 0) {
@@ -216,7 +237,7 @@ const PhotoGallery = () => {
 
   return (
     <motion.div 
-      className="container mx-auto px-4 py-12 min-h-screen max-w-6xl"
+      className="container mx-auto px-4 py-12 min-h-screen max-w-7xl"
       initial="initial"
       animate="animate"
       variants={containerVariants}
@@ -230,63 +251,34 @@ const PhotoGallery = () => {
       </motion.header>
 
       <motion.main variants={containerVariants}>
-        <motion.section 
-          className="mb-16"
-          variants={containerVariants}
-        >
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-200">Landscape Photos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {photos.map(photo => (
-              <motion.div
-                key={photo.id}
-                className="group relative aspect-video overflow-hidden rounded-xl border-2 border-gray-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer"
-                variants={fadeIn}
-                whileHover={{ scale: 1.02 }}
-                onClick={() => openModal(photo)}
-              >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {allPhotos.map(photo => (
+            <motion.div
+              key={photo.id}
+              className={`group relative overflow-hidden rounded-lg border-2 border-gray-800 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer
+                ${photo.aspectRatio === 'portrait' ? 'row-span-2' : ''}`}
+              variants={fadeIn}
+              whileHover={{ scale: 1.02 }}
+              onClick={() => openModal(photo)}
+            >
+              <div className="relative w-full h-0" style={{ 
+                paddingBottom: photo.aspectRatio === 'portrait' ? '140%' : '66.66%',
+              }}>
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   priority
                 />
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <p className="text-white text-lg font-medium">{photo.title}</p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        <motion.section 
-          className="mb-16"
-          variants={containerVariants}
-        >
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-200">Portrait Photos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {photosVert.map(photo => (
-              <motion.div
-                key={photo.id}
-                className="group relative aspect-[3/4] overflow-hidden rounded-xl border-2 border-gray-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 cursor-pointer"
-                variants={fadeIn}
-                whileHover={{ scale: 1.02 }}
-                onClick={() => openModal(photo)}
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  priority
-                />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <p className="text-white text-lg font-medium">{photo.title}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </motion.main>
 
       <AnimatePresence>
@@ -315,8 +307,8 @@ const PhotoGallery = () => {
               
               <div className="relative max-h-[90vh] rounded-xl overflow-hidden">
                 <div className="relative" style={{ 
-                  width: selectedPhoto.id >= 100 ? 'auto' : '100%',
-                  height: selectedPhoto.id >= 100 ? '90vh' : 'auto',
+                  width: selectedPhoto.aspectRatio === 'portrait' ? 'auto' : '100%',
+                  height: selectedPhoto.aspectRatio === 'portrait' ? '90vh' : 'auto',
                   maxWidth: '100vw',
                   display: 'flex',
                   justifyContent: 'center'
@@ -324,8 +316,8 @@ const PhotoGallery = () => {
                   <Image
                     src={selectedPhoto.src}
                     alt={selectedPhoto.alt}
-                    width={selectedPhoto.id >= 100 ? 800 : 1200}
-                    height={selectedPhoto.id >= 100 ? 1200 : 800}
+                    width={selectedPhoto.aspectRatio === 'portrait' ? 800 : 1200}
+                    height={selectedPhoto.aspectRatio === 'portrait' ? 1200 : 800}
                     className="object-contain"
                     priority
                   />
