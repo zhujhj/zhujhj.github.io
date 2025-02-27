@@ -1,357 +1,364 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useEffect } from 'react';
-import { Users, XCircle } from "phosphor-react";
-import Nav from '../components/Nav';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XCircle, ArrowLeft, ArrowRight } from "phosphor-react";
 
 const PhotoGallery = () => {
   const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+  };
+
+  const containerVariants = {
     initial: { opacity: 0 },
-    animate: { opacity: 1 },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
   };
 
   const photos = [
     {
       id: 0,
       src: '/images/spanishbanks.jpeg',
-      alt: 'Photo 3',
+      alt: 'Spanish Banks',
+      title: 'Spanish Banks',
     },
     {
       id: 1,
       src: '/images/bryantstephen.jpeg',
-      alt: 'Photo 1',
+      alt: 'Bryant and Stephen',
+      title: 'Friends at UBC',
     },
     {
       id: 2,
       src: '/images/chineserestaurant.jpeg',
-      alt: 'Photo 2',
+      alt: 'Chinese Restaurant',
+      title: 'Chinese Restaurant',
     },
     {
       id: 3,
       src: '/images/group1.jpeg',
-      alt: 'Photo 3',
+      alt: 'Group Photo 1',
+      title: 'Group Photo 1',
     },
     {
       id: 4,
       src: '/images/group2.jpeg',
-      alt: 'Photo 1',
+      alt: 'Group Photo 2',
+      title: 'Group Photo 2',
     },
     {
       id: 5,
       src: '/images/jackphilipstephen.jpeg',
-      alt: 'Photo 2',
+      alt: 'Jack, Philip, and Stephen',
+      title: 'Jack, Philip, and Stephen',
     },
     {
       id: 6,
       src: '/images/lights.jpeg',
-      alt: 'Photo 3',
+      alt: 'Lights',
+      title: 'Lights',
     },
     {
       id: 7,
       src: '/images/skyline1.jpeg',
-      alt: 'Photo 1',
+      alt: 'Skyline',
+      title: 'Skyline',
     },
     {
       id: 8,
       src: '/images/stephen.jpeg',
-      alt: 'Photo 2',
+      alt: 'Stephen',
+      title: 'Stephen',
     },
     {
       id: 9,
       src: '/images/CE74FC1D-0CC2-4992-9C9E-5ACB4DBAA837_1_105_c.jpeg',
       alt: 'Photo 3',
+      title: 'Photo 3',
     },
     {
       id: 10,
       src: '/images/5615371C-F970-4D3D-8D60-D6FCA9E18C80_1_105_c.jpeg',
       alt: 'Photo 3',
+      title: 'Photo 3',
     },
     {
       id: 11,
       src: '/images/kitssunset.jpeg',
-      alt: 'Photo 3',
+      alt: 'Kits Sunset',
+      title: 'Kits Sunset',
     },
     {
       id: 12,
       src: '/images/mistymountain.jpeg',
-      alt: 'Photo 3',
+      alt: 'Misty Mountain',
+      title: 'Misty Mountain',
     },
     {
       id: 13,
       src: '/images/pianosfu.jpeg',
-      alt: 'Photo 3',
+      alt: 'Pianosfu',
+      title: 'Pianosfu',
     },
     {
       id: 14,
       src: '/images/chinatown.jpeg',
-      alt: 'Photo 3',
+      alt: 'Chinatown',
+      title: 'Chinatown',
     },
     {
       id: 15,
       src: '/images/basketball.jpeg',
-      alt: 'Photo 3',
+      alt: 'Basketball',
+      title: 'Basketball',
     },
     {
       id: 16,
       src: '/images/indigenous.jpeg',
-      alt: 'Photo 3',
+      alt: 'Indigenous',
+      title: 'Indigenous',
     },
     {
       id: 17,
       src: '/images/fireworks1.jpeg',
-      alt: 'Photo 3',
+      alt: 'Fireworks',
+      title: 'Fireworks',
     },
     {
       id: 18,
       src: '/images/chipmunk.jpeg',
-      alt: 'Photo 3',
+      alt: 'Chipmunk',
+      title: 'Chipmunk',
     },
     {
       id: 19,
       src: '/images/mall.jpeg',
-      alt: 'Photo 3',
+      alt: 'Mall',
+      title: 'Mall',
     },
-    // Add more photos as needed
   ];
 
   const photosVert = [
     {
       id: 100,
       src: '/images/verticalsunset.jpeg',
-      alt: 'Photo 1',
+      alt: 'Vertical Sunset',
+      title: 'Sunset View',
     },
     {
       id: 101,
       src: '/images/stanleyparkbike.jpeg',
-      alt: 'Photo 1',
+      alt: 'Stanley Park Bike',
+      title: 'Stanley Park Bike',
     },
     {
       id: 102,
       src: '/images/mountainwindow.jpeg',
-      alt: 'Photo 1',
+      alt: 'Mountain Window',
+      title: 'Mountain Window',
     },
     {
       id: 103,
       src: '/images/gastown.jpeg',
-      alt: 'Photo 1',
+      alt: 'Gastown',
+      title: 'Gastown',
     },
-  ]
+  ];
 
-//   return (
-//     <div className="container mx-auto py-8">
-//       <h1 className="text-4xl font-bold text-center mb-8">Photo Gallery</h1>
-//       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-//         {photos.map(photo => (
-//           <div key={photo.id}>
-//             <Image
-//               src={photo.src}
-//               alt={photo.alt}
-//               width={500}
-//               height={500}
-//               className="object-cover"
-//             />
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default PhotoGallery;
-const [selectedPhoto, setSelectedPhoto] = useState(null);
-const [isImageExpanded, setImageExpanded] = useState(false);
-const [leftPhotoID, setLeftPhotoID] = useState(null);
-const [rightPhotoID, setRightPhotoID] = useState(null);
-
-  // const openModal = (photo) => {
-  //   setSelectedPhoto(photo);
-  // };
-
-  // const closeModal = () => {
-  //   setSelectedPhoto(null);
-  // };
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [isImageExpanded, setImageExpanded] = useState(false);
 
   const openModal = (photo) => {
     setSelectedPhoto(photo);
     setImageExpanded(true);
-    // console.log("opened photo: " + photo.src);
-    // console.log("opened photo id: " + photo.id);
-    // setLeftPhotoID(photo.id - 1);
-    // setRightPhotoID(photo.id + 1);
-    // console.log("left id: " + leftPhotoID);
-    // console.log("right id: " + rightPhotoID);
-    // console.log("image expanded: " + isImageExpanded);
-    // console.log(isImageExpanded);
-    // console.log(selectedPhoto);
+    document.body.style.overflow = 'hidden';
   };
   
   const closeModal = () => {
     setSelectedPhoto(null);
     setImageExpanded(false);
-    setLeftPhotoID(null);
-    setRightPhotoID(null);
+    document.body.style.overflow = 'unset';
   };
 
   const handleKeyDown = (event) => {
     if (event.key === 'Escape') {
-      // console.log(event);
       closeModal();
     }
   };
 
   const handleArrowKeys = (event) => {
-    event.preventDefault();
-    console.log(isImageExpanded)
     if (!isImageExpanded) return;
-    let newIndex;
-    if (event.key === 'ArrowLeft') {
-      // console.log("detected left");
-      // if (isImageExpanded) {
-      //   console.log(selectedPhoto);
-      //   leftPhoto(selectedPhoto);
-      // } else {
-      //   console.log("photo was not expanded");
-      // }
-      // console.log("left photo id " + leftPhotoID);
-      // closeModal();
-      // console.log(photos[leftPhotoID]);
-      // openModal(photos[leftPhotoID]);
-      // console.log("reaches here");
-      // setLeftPhotoID(leftPhotoID - 1);
-      // console.log(leftPhotoID);
-      // setRightPhotoID(leftPhotoID + 1);
-      // console.log(rightPhotoID);
-    } else if (event.key === 'ArrowRight') {
-      // console.log("right photo id " + rightPhotoID);
-
-      // console.log(isImageExpanded)
-      // if (isImageExpanded) {
-      //   console.log(selectedPhoto.id)
-      //   let rightID = selectedPhoto.id + 1
-      //   closeModal();
-      //   openModal(photos[rightID]);
-      // }
-
-      newIndex = photos.findIndex(photo => photo.id === selectedPhoto.id) + 1;
-    if (newIndex < photos.length) {
-      setSelectedPhoto(photos[newIndex]);
+    
+    const allPhotos = [...photos, ...photosVert];
+    const currentIndex = allPhotos.findIndex(photo => photo.id === selectedPhoto.id);
+    
+    if (event.key === 'ArrowLeft' && currentIndex > 0) {
+      setSelectedPhoto(allPhotos[currentIndex - 1]);
+    } else if (event.key === 'ArrowRight' && currentIndex < allPhotos.length - 1) {
+      setSelectedPhoto(allPhotos[currentIndex + 1]);
     }
-
-      // closeModal();
-      // openModal(photos[rightPhotoID]);
-      // if (isImageExpanded) {
-        // nextPhoto(selectedPhoto);
-      // }
-    }
-  }
+  };
 
   useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleArrowKeys);
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', handleArrowKeys);
     };
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleArrowKeys);
-    return () => {
-      document.removeEventListener('keydown', handleArrowKeys);
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log("isImageExpanded:", isImageExpanded);
-    console.log("selectedPhoto:", selectedPhoto);
-  }, [isImageExpanded, selectedPhoto]);
+  }, [selectedPhoto, isImageExpanded]);
 
   return (
-    <motion.div
-     className="container mx-auto py-8"
-        initial="initial"
-        animate="animate"
+    <motion.div 
+      className="container mx-auto px-4 py-12 min-h-screen max-w-6xl"
+      initial="initial"
+      animate="animate"
+      variants={containerVariants}
+    >
+      <motion.header 
+        className="text-center mb-16"
         variants={fadeIn}
-        transition={{ duration: 2 }}
-        >
-      <h1 className="text-4xl font-bold text-left m-4 text-gray-300">Photo Gallery</h1>
-      <p className='text-gray-500 m-4'>
-        One of my personal hobbies is photography. I didn't want to spend
-      too much money on a very expensive camera, so I salvaged my dad's old film camera from the closet, a
-      Ricoh KR-5 Super II. Right now, I am playing around with it, and here are some of my favourite photos.
-      </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {photos.map(photo => (
-          <motion.div key={photo.id} onClick={() => {
-            openModal(photo)}}
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              width={800}
-              height={400}
-              className="object-cover cursor-pointer shadow-lg border-2 border-black rounded-lg"
-              // whileHover={{ scale: 1.1 }}
-              // transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            />
-          </motion.div>
-        ))}
-      </div>
-      <div className="pt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {photosVert.map(photosVertItem => (
-          <motion.div key={photosVertItem.id} onClick={() => openModal(photosVertItem)}
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-            <Image
-              src={photosVertItem.src}
-              alt={photosVertItem.alt}
-              width={500}
-              height={800}
-              className="object-cover cursor-pointer shadow-lg border-2 border-black rounded-lg"
-              // whileHover={{ scale: 1.1 }}
-              // transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            />
-          </motion.div>
-        ))}
-      </div>
+      >
+        <h1 className="text-5xl font-bold text-gray-200 mb-4">Photo Gallery</h1>
+        <p className="text-gray-400 text-lg">A collection of moments captured through my lens</p>
+      </motion.header>
 
-      {selectedPhoto && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60"
-        // onClick={closeModal}
+      <motion.main variants={containerVariants}>
+        <motion.section 
+          className="mb-16"
+          variants={containerVariants}
         >
-          <motion.div className="relative"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.3,
-            ease: [0, 0.71, 0.2, 1.01],
-            scale: {
-              type: "spring",
-              damping: 15,
-              stiffness: 100,
-              restDelta: 0.001
-            }
-          }}>
-            <Image
-              src={selectedPhoto.src}
-              alt={selectedPhoto.alt}
-              width={selectedPhoto.id < 100 ? 800 : 500}
-              height={400}
-              className="object-contain border-2 border-black rounded-lg"
-            />
-            <motion.button
-              className="absolute top-4 right-4 text-white font-bold text-lg"
-              onClick={closeModal}
-              whileHover={{ scale: 1.07 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-200">Landscape Photos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {photos.map(photo => (
+              <motion.div
+                key={photo.id}
+                className="group relative aspect-video overflow-hidden rounded-xl border-2 border-gray-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer"
+                variants={fadeIn}
+                whileHover={{ scale: 1.02 }}
+                onClick={() => openModal(photo)}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <p className="text-white text-lg font-medium">{photo.title}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        <motion.section 
+          className="mb-16"
+          variants={containerVariants}
+        >
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-200">Portrait Photos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {photosVert.map(photo => (
+              <motion.div
+                key={photo.id}
+                className="group relative aspect-[3/4] overflow-hidden rounded-xl border-2 border-gray-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 cursor-pointer"
+                variants={fadeIn}
+                whileHover={{ scale: 1.02 }}
+                onClick={() => openModal(photo)}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <p className="text-white text-lg font-medium">{photo.title}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+      </motion.main>
+
+      <AnimatePresence>
+        {selectedPhoto && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={closeModal}
+          >
+            <motion.div
+              className="relative max-w-7xl mx-auto"
+              onClick={e => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
             >
-              <XCircle size={32} weight="fill" className='pr-1 -mt-1'/>
-            </motion.button>
+              <button
+                className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
+                onClick={closeModal}
+              >
+                <XCircle size={32} weight="fill" />
+              </button>
+              
+              <div className="relative max-h-[90vh] rounded-xl overflow-hidden">
+                <div className="relative" style={{ 
+                  width: selectedPhoto.id >= 100 ? 'auto' : '100%',
+                  height: selectedPhoto.id >= 100 ? '90vh' : 'auto',
+                  maxWidth: '100vw',
+                  display: 'flex',
+                  justifyContent: 'center'
+                }}>
+                  <Image
+                    src={selectedPhoto.src}
+                    alt={selectedPhoto.alt}
+                    width={selectedPhoto.id >= 100 ? 800 : 1200}
+                    height={selectedPhoto.id >= 100 ? 1200 : 800}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </div>
+
+              <div className="absolute inset-y-0 left-4 flex items-center">
+                <button
+                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleArrowKeys({ key: 'ArrowLeft' });
+                  }}
+                >
+                  <ArrowLeft size={24} className="text-white" />
+                </button>
+              </div>
+
+              <div className="absolute inset-y-0 right-4 flex items-center">
+                <button
+                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleArrowKeys({ key: 'ArrowRight' });
+                  }}
+                >
+                  <ArrowRight size={24} className="text-white" />
+                </button>
+              </div>
+            </motion.div>
           </motion.div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
